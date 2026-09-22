@@ -66,7 +66,7 @@ Every accurate letter triggers swift punches, crescent kicks, and multi-hit comb
 
 ### 1. Clone or Download Repository
 ```bash
-git clone https://github.com/rishabhyadav47383/rishu-key-jutsu.git
+git clone https://github.com/rishu-builds/rishu-key-jutsu.git
 cd rishu-key-jutsu
 ```
 
@@ -102,7 +102,7 @@ Open `http://localhost:8080/play.html` in your browser.
 ## 👤 Author & Developer
 
 **Code With Rishabh (Rishabh Yadav)**
-- **GitHub**: [@rishabhyadav47383](https://github.com/rishabhyadav47383)
+- **GitHub**: [@rishu-builds](https://github.com/rishu-builds)
 - **Instagram**: [@rishabh__yadav777](https://www.instagram.com/rishabh__yadav777?stkn=MWpncXM0MWV3OXd1cw==)
 - **Email**: [ysrishabh017@gmail.com](mailto:ysrishabh017@gmail.com)
 

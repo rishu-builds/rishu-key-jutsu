@@ -7,7 +7,7 @@
 DEVELOPER & SUPPORT:
 --------------------
 - Creator:   Code With Rishabh (Rishabh Yadav)
-- GitHub:    https://github.com/rishabhyadav47383
+- GitHub:    https://github.com/rishu-builds
 - Instagram: https://www.instagram.com/rishabh__yadav777?stkn=MWpncXM0MWV3OXd1cw==
 - Email:     ysrishabh017@gmail.com
 
