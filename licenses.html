@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third-Party Licenses & Attributions — Rishu Key Jutsu</title>
+    <meta name="description" content="Third-party software licenses, typography SIL OFL attributions, and audio asset manifests for Rishu Key Jutsu.">
+    <link rel="icon" type="image/png" href="assets/keyjutsu_app_icon.png">
+    <link rel="stylesheet" href="style.css?v=production_legal">
+    <style>
+        .legal-container {
+            max-width: 1200px;
+            width: 92%;
+            margin: 0 auto;
+            padding: 50px 24px 100px;
+        }
+        .legal-header {
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 32px;
+            margin-bottom: 40px;
+        }
+        .legal-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            font-weight: 800;
+        }
+        .legal-meta {
+            font-family: var(--font-tech);
+            font-size: 0.88rem;
+            color: var(--color-cyan);
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .legal-section {
+            margin-bottom: 40px;
+        }
+        .legal-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            color: var(--color-text-primary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(39, 49, 61, 0.6);
+            font-weight: 700;
+        }
+        .legal-section h3 {
+            font-family: var(--font-tech);
+            font-size: 1.08rem;
+            color: var(--color-cyan);
+            margin: 22px 0 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .legal-section p {
+            font-family: var(--font-body);
+            color: var(--color-text-secondary);
+            font-size: 1.02rem;
+            line-height: 1.75;
+            margin-bottom: 16px;
+            max-width: 95ch;
+        }
+        .legal-section ul {
+            margin: 12px 0 20px 24px;
+            color: var(--color-text-secondary);
+            font-family: var(--font-body);
+            max-width: 95ch;
+        }
+        .legal-section li {
+            margin-bottom: 8px;
+            line-height: 1.65;
+            font-size: 1.02rem;
+        }
+        .license-pre {
+            background: var(--color-surface-deep);
+            border: 1px solid var(--color-border);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-tech);
+            font-size: 0.86rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin-top: 16px;
+            width: 100%;
+        }
+        .back-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-tech);
+            font-size: 0.88rem;
+            color: var(--color-cyan);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+        .back-nav:hover {
+            color: var(--color-cyan-hover);
+            transform: translateX(-3px);
+        }
+        .asset-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 24px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+        }
+        .asset-table th, .asset-table td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .asset-table th {
+            background: var(--color-surface-sec);
+            color: var(--color-cyan);
+            font-family: var(--font-tech);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .asset-table td {
+            color: var(--color-text-secondary);
+        }
+        .asset-table a {
+            color: var(--color-cyan);
+            text-decoration: none;
+        }
+        .asset-table a:hover {
+            text-decoration: underline;
+        }
+        .badge-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-tech);
+            font-size: 0.78rem;
+            font-weight: 600;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--color-cyan);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+        }
+        .verification-box {
+            background: var(--color-surface-deep);
+            border: 1px solid var(--color-border-accent);
+            border-radius: var(--radius-md);
+            padding: 28px 32px;
+            margin-top: 40px;
+            width: 100%;
+        }
+        .verification-box h2 {
+            font-family: var(--font-display);
+            color: var(--color-cyan);
+            font-size: 1.35rem;
+            margin-bottom: 14px;
+            border-bottom: 1px solid var(--color-border-accent);
+            padding-bottom: 10px;
+            font-weight: 800;
+        }
+        .verification-box p {
+            font-family: var(--font-body);
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            max-width: 100%;
+        }
+        @media (max-width: 768px) {
+            .legal-container {
+                width: 100%;
+                padding: 36px 18px 60px;
+            }
+            .legal-section {
+                margin-bottom: 28px;
+            }
+            .verification-box {
+                padding: 20px 18px;
+            }
+            .license-pre {
+                padding: 16px;
+                font-size: 0.8rem;
+            }
+            .asset-table th, .asset-table td {
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/keyjutsu_horizontal_logo.png" alt="Rishu Key Jutsu Logo">
+            </a>
+            <div class="nav-links">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">← BACK TO KEYJUTSU</a></li>
+                    <li><a href="privacy.html" class="nav-link">PRIVACY POLICY</a></li>
+                    <li><a href="terms.html" class="nav-link">TERMS OF SERVICE</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="https://github.com/rishabhyadav47383" target="_blank" rel="noopener noreferrer" class="social-nav-btn github-nav-btn" title="GitHub (Rishu Key Jutsu)" aria-label="GitHub Rishu Key Jutsu">
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                        </svg>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-nav-btn instagram-nav-btn" title="Instagram (Rishu Key Jutsu)" aria-label="Instagram Rishu Key Jutsu">
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="mailto:ysrishabh017@gmail.com" class="social-nav-btn email-nav-btn" title="Email (ysrishabh017@gmail.com)" aria-label="Email ysrishabh017@gmail.com">
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Legal Document -->
+    <main class="legal-container">
+        <a href="index.html" class="back-nav">← Back to Main Website</a>
+
+        <div class="legal-header">
+            <h1 class="legal-title">Third-Party Licenses & Attributions</h1>
+            <div class="legal-meta">
+                MANIFEST • GODOT ENGINE, TYPOGRAPHY, FOLEY AUDIO, AND PIXABAY ASSETS
+            </div>
+        </div>
+
+        <article>
+            <!-- 1. Godot Engine -->
+            <section class="legal-section">
+                <h2>1. Game Engine Software — Godot Engine 4</h2>
+                <p>Rishu Key Jutsu is built using Godot Engine 4, distributed under the MIT License:</p>
+                <div class="license-pre">License: MIT License
+Copyright (c) 2014-present Godot Engine contributors.
+Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</div>
+            </section>
+
+            <!-- 2. Typography -->
+            <section class="legal-section">
+                <h2>2. Typography & Fonts</h2>
+                <p>
+                    The game executable utilizes Godot 4 built-in system font rendering. The Rishu Key Jutsu website imports Google Fonts web families under the SIL Open Font License 1.1 (OFL):
+                </p>
+                <table class="asset-table">
+                    <thead>
+                        <tr>
+                            <th>Font Family</th>
+                            <th>Designer / Publisher</th>
+                            <th>License</th>
+                            <th>Attribution Requirement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Outfit</strong></td>
+                            <td>Onuava / Google Fonts</td>
+                            <td><span class="badge-tag">SIL OFL 1.1</span></td>
+                            <td>No mandatory attribution requirement identified for web font stylesheets.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Space Grotesk</strong></td>
+                            <td>Florian Karsten</td>
+                            <td><span class="badge-tag">SIL OFL 1.1</span></td>
+                            <td>No mandatory attribution requirement identified for web font stylesheets.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Inter</strong></td>
+                            <td>Rasmus Andersson</td>
+                            <td><span class="badge-tag">SIL OFL 1.1</span></td>
+                            <td>No mandatory attribution requirement identified for web font stylesheets.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 3. Audio Manifest -->
+            <section class="legal-section">
+                <h2>3. Audio Asset Manifest & Attributions</h2>
+                
+                <h3 style="color: var(--color-cyan); font-size: 1.1rem; margin: 20px 0 10px;">A. Procedural Audio Engine (Rishu Key Jutsu Original Code)</h3>
+                <p>
+                    Synthesized in GDScript code (<code style="color: var(--color-cyan);">res://scripts/systems/audio_manager.gd</code>) for typing clicks, UI navigation sound effects, victory/defeat jingles, and music loops. (Proprietary Rishu Key Jutsu Code Assets).
+                </p>
+
+                <h3 style="color: var(--color-cyan); font-size: 1.1rem; margin: 24px 0 10px;">B. Combat Foley WAV Collection (40 Files)</h3>
+                <table class="asset-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>File Count & Paths</th>
+                            <th>Source Platform</th>
+                            <th>License</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Impact Foley</strong></td>
+                            <td>14 WAVs (<code style="font-size:0.8rem;">res://audio/sfx/combat/impacts/</code>)</td>
+                            <td><a href="https://mixkit.co/free-sound-effects/punch/" target="_blank" rel="noopener">Mixkit Free SFX</a></td>
+                            <td><span class="badge-tag">Mixkit Sound Effects Free License</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vocal Reactions</strong></td>
+                            <td>22 WAVs (<code style="font-size:0.8rem;">res://audio/sfx/combat/reactions/</code>)</td>
+                            <td><a href="https://freesound.org" target="_blank" rel="noopener">Freesound Open Foley Collection</a></td>
+                            <td><span class="badge-tag">CC0 1.0 Universal</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Movement Foley</strong></td>
+                            <td>4 WAVs (<code style="font-size:0.8rem;">res://audio/sfx/combat/movement/</code>)</td>
+                            <td><a href="https://mixkit.co/free-sound-effects/fight/" target="_blank" rel="noopener">Mixkit Free SFX</a></td>
+                            <td><span class="badge-tag">Mixkit Sound Effects Free License</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.88rem; margin-top: 10px; color: var(--color-text-secondary);">
+                    No mandatory attribution requirement identified under the applicable Mixkit Sound Effects Free License / CC0 1.0 Universal; source information is retained in this manifest for transparency and record-keeping.
+                </p>
+
+                <h3 style="color: var(--color-cyan); font-size: 1.1rem; margin: 24px 0 10px;">C. Pixabay Audio Assets — Embedded Gameplay Use (6 MP3 Files)</h3>
+                <p style="font-size: 0.92rem; margin-bottom: 12px;">
+                    Source: Pixabay Sound Effects • License: Pixabay Content License • Usage: Embedded within the Rishu Key Jutsu game as gameplay audio; the raw sound files are not distributed separately as standalone assets. No mandatory attribution requirement identified under the applicable Pixabay Content License; source information is retained in this manifest for transparency and record-keeping.
+                </p>
+                <table class="asset-table">
+                    <thead>
+                        <tr>
+                            <th>In-Game Path</th>
+                            <th>Original Filename</th>
+                            <th>Asset ID & Title</th>
+                            <th>Creator / Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>res://audio/death sound.mp3</code></td>
+                            <td><code style="font-size:0.8rem;">u_r7cny11q7r-man-death-scream-186763.mp3</code></td>
+                            <td>ID: 186763 — <a href="https://pixabay.com/sound-effects/people-man-death-scream-186763/" target="_blank" rel="noopener">Man death scream</a></td>
+                            <td>Pixabay Community</td>
+                        </tr>
+                        <tr>
+                            <td><code>res://audio/player hit sound.mp3</code></td>
+                            <td><code style="font-size:0.8rem;">virtual-vibes-thud-impact-sound-sfx-379990.mp3</code></td>
+                            <td>ID: 379990 — <a href="https://pixabay.com/sound-effects/thud-impact-sound-sfx-379990/" target="_blank" rel="noopener">Thud Impact Sound SFX</a></td>
+                            <td>Virtual_Vibes (Dilip)</td>
+                        </tr>
+                        <tr>
+                            <td><code>res://audio/hurt sound enemy.mp3</code></td>
+                            <td><code style="font-size:0.8rem;">freesound_community-grunt2-85989.mp3</code></td>
+                            <td>ID: 85989 — <a href="https://pixabay.com/sound-effects/grunt2-85989/" target="_blank" rel="noopener">grunt2</a></td>
+                            <td>freesound_community</td>
+                        </tr>
+                        <tr>
+                            <td><code>res://audio/hurt sound.mp3</code></td>
+                            <td><code style="font-size:0.8rem;">freesound_community-young-man-being-hurt-95628.mp3</code></td>
+                            <td>ID: 95628 — <a href="https://pixabay.com/sound-effects/people-young-man-being-hurt-95628/" target="_blank" rel="noopener">Young man being hurt</a></td>
+                            <td>freesound_community</td>
+                        </tr>
+                        <tr>
+                            <td><code>res://audio/clear hit punch sound.mp3</code></td>
+                            <td><code style="font-size:0.8rem;">khoamthanh-dam-566913.mp3</code></td>
+                            <td>ID: 566913 — <a href="https://pixabay.com/sound-effects/566913/" target="_blank" rel="noopener">dam / Punch Impact</a></td>
+                            <td>khoamthanh</td>
+                        </tr>
+                        <tr>
+                            <td><code>res://audio/enemy hit sound.mp3</code></td>
+                            <td><code style="font-size:0.8rem;">khoamthanh-punch-sound-effect-7ehhx2evisk-500092.mp3</code></td>
+                            <td>ID: 500092 — <a href="https://pixabay.com/sound-effects/500092/" target="_blank" rel="noopener">punch sound effect</a></td>
+                            <td>khoamthanh</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 4. Proprietary Copyright -->
+            <section class="legal-section">
+                <h2>4. Proprietary Rishu Key Jutsu Materials</h2>
+                <p>
+                    <strong>Copyright © 2026 Rishabh (Rishu Key Jutsu). All Rights Reserved.</strong>
+                </p>
+                <p>
+                    Rishu Key Jutsu is an original game project created and developed by Rishu Key Jutsu operating under the public studio/brand name Rishu Key Jutsu.
+                </p>
+                <p>
+                    Original Rishu Key Jutsu materials, including original source code, GDScript logic, procedural audio/synthesis code, gameplay systems, character rigs, custom shaders, level curricula, UI compositions, branding artwork, and original website code/design, are owned by Rishu Key Jutsu and presented under the Rishu Key Jutsu brand:
+                </p>
+                <ul>
+                    <li>All original GDScript source code (<code style="color: var(--color-cyan);">scripts/</code> directory).</li>
+                    <li>Procedural audio and synthesis engine code (<code style="color: var(--color-cyan);">res://scripts/systems/audio_manager.gd</code>).</li>
+                    <li>Godot 4 scene layouts and UI design compositions (<code style="color: var(--color-cyan);">scenes/</code> directory).</li>
+                    <li>Procedural stickman fighter character rigs & skeletal animation systems.</li>
+                    <li>Custom shaders, 11 Combat Arenas designs, level curriculum, and placement test logic.</li>
+                    <li>Original branding assets: Rishu Key Jutsu Horizontal Logo, App Icon, and Main Menu Cover Art.</li>
+                    <li>Official Website markup, styling, and client scripts (<code style="color: var(--color-cyan);">website/</code> directory).</li>
+                </ul>
+                <p style="font-size: 0.88rem; color: var(--color-text-secondary); margin-top: 10px;">
+                    Disclaimer: Proprietary copyright claims apply strictly to Rishu Key Jutsu original code and artwork, and do not extend to third-party open-source components (Godot Engine MIT License, SIL OFL fonts, CC0/Mixkit foley audio, Pixabay audio assets).
+                </p>
+            </section>
+
+            <!-- 5. Commercial Release Verification -->
+            <section class="verification-box">
+                <h2>Commercial Release Verification</h2>
+                <p style="font-size: 0.95rem; margin-bottom: 12px; color: var(--color-text-primary);">
+                    <strong>VERDICT: Third-Party License Documentation Verified for Identified Assets</strong>
+                </p>
+                <p style="font-size: 0.92rem; line-height: 1.75; margin-bottom: 12px;">
+                    All identified third-party assets in the current project have been documented against their recorded source platforms and applicable license information. This documentation records the licensing information relied upon by the project and is not a legal opinion or guarantee of commercial clearance. Rishu Key Jutsu should retain original download records, source URLs, asset IDs, and applicable license terms as evidence of the permissions relied upon for distribution.
+                </p>
+                <p style="font-size: 0.92rem; line-height: 1.75; color: var(--color-text-secondary);">
+                    Every currently identified third-party asset in the project executable and website bundle has been reviewed and documented against its recorded source and applicable license information.
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img src="assets/keyjutsu_horizontal_logo.png" alt="Rishu Key Jutsu Logo">
+                    </div>
+                    <p style="font-size: 0.95rem;">
+                        Rishu Key Jutsu Official Commercial Game. Built with Godot Engine 4. Touch typing martial arts combat software.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://github.com/rishabhyadav47383" target="_blank" rel="noopener noreferrer" class="social-badge github-badge" title="GitHub (Rishu Key Jutsu)" aria-label="GitHub Rishu Key Jutsu">
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-badge instagram-badge" title="Instagram (Rishu Key Jutsu)" aria-label="Instagram Rishu Key Jutsu">
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="mailto:ysrishabh017@gmail.com" class="social-badge email-badge" title="Email (ysrishabh017@gmail.com)" aria-label="Email ysrishabh017@gmail.com">
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="font-family: var(--font-tech); font-size: 0.9rem; color: var(--color-cyan); margin-bottom: 16px;">NAVIGATION</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#game">Game</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#arenas">11 Arenas</a></li>
+                        <li><a href="index.html#ranks">7 Ranks</a></li>
+                        <li><a href="index.html#specs">Specs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="font-family: var(--font-tech); font-size: 0.9rem; color: var(--color-cyan); margin-bottom: 16px;">LEGAL & SUPPORT</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="licenses.html" style="color: var(--color-cyan);">Licenses</a></li>
+                        <li><a href="mailto:ysrishabh017@gmail.com">ysrishabh017@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 Rishabh (Rishu Key Jutsu). All rights reserved. Powered by Godot 4.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

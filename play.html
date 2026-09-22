@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishu Key Jutsu — Martial Arts Typing Combat • By Code With Rishabh</title>
+    <meta name="description" content="Play Rishu Key Jutsu: Execute martial arts strikes through touch typing speed across 100 levels and 11 arenas. Created by Code With Rishabh (Rishabh Yadav).">
+    <link rel="icon" type="image/png" href="assets/keyjutsu_app_icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF2A4B">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body class="game-body">
+
+    <!-- ===================================================================
+         SCREEN 1: MAIN MENU (ui_main_menu.png)
+         =================================================================== -->
+    <div id="screen-main-menu" class="game-screen active">
+        <div class="main-menu-stage-wrapper">
+            <div class="main-menu-stage">
+                <!-- Top-right quick launch pills -->
+                <div class="menu-top-actions">
+                    <button class="menu-action-pill" id="menu-btn-endless" title="Endless Survival Mode">⚔️ ENDLESS DOJO</button>
+                    <button class="menu-action-pill gold" id="menu-btn-cert" title="Get Official Ninja Certificate">📜 CERTIFICATE</button>
+                </div>
+
+                <!-- Exact interactive overlays on top of the original artwork buttons -->
+                <button class="menu-hitbox-btn btn-play" id="menu-btn-play" aria-label="Play Game" title="Play Game"></button>
+                <button class="menu-hitbox-btn btn-levels" id="menu-btn-levels" aria-label="Level Select" title="Level Select"></button>
+                <button class="menu-hitbox-btn btn-test" id="menu-btn-test" aria-label="Typing Speed Test" title="Typing Speed Test"></button>
+                <button class="menu-hitbox-btn btn-stats" id="menu-btn-stats" aria-label="Progress & Stats" title="Progress & Stats"></button>
+
+                <button class="menu-hitbox-btn btn-settings" id="menu-btn-settings" aria-label="Settings" title="Settings"></button>
+                <button class="menu-hitbox-btn btn-howto" id="menu-btn-howto" aria-label="How to Play" title="How to Play"></button>
+                <button class="menu-hitbox-btn btn-exit" id="menu-btn-exit" aria-label="Exit" title="Exit"></button>
+
+                <div class="menu-credits-bar">
+                    <span>RISHU KEY JUTSU v1.0.0 • CREATED BY CODE WITH RISHABH (RISHABH YADAV)</span>
+                    <span>KEYJUTSU COMBAT ENGINE — GODOT 4 / CANVAS 2D</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================
+         SCREEN 2: CHOOSE YOUR PATH - LEVEL SELECT (ui_level_select.png)
+         =================================================================== -->
+    <div id="screen-level-select" class="game-screen" style="display: none;">
+        <div class="screen-container level-select-container">
+            <!-- Header -->
+            <div class="view-header-bar">
+                <div class="header-left">
+                    <img src="assets/keyjutsu_horizontal_logo.png" alt="Logo" class="mini-header-logo">
+                </div>
+                <div class="header-center">
+                    <h1 class="view-title">CHOOSE YOUR PATH</h1>
+                    <div class="view-title-line"></div>
+                </div>
+                <div class="header-right">
+                    <img src="assets/keyjutsu_app_icon.png" alt="Badge" class="mini-header-badge">
+                </div>
+            </div>
+
+            <!-- 10 Level Cards Grid with Pagination Arrows -->
+            <div class="cards-carousel-wrap">
+                <button class="page-nav-arrow prev-page-btn" id="lvl-prev-btn" title="Previous 10 Levels">‹</button>
+
+                <div class="ten-cards-grid" id="ten-cards-grid">
+                    <!-- Populated dynamically by JS (5 columns x 2 rows = 10 cards) -->
+                </div>
+
+                <button class="page-nav-arrow next-page-btn" id="lvl-next-btn" title="Next 10 Levels">›</button>
+            </div>
+
+            <!-- Bottom Navigation Bar -->
+            <div class="view-bottom-bar">
+                <button class="retro-outline-btn" id="lvl-back-btn">← BACK</button>
+                <div class="page-indicator-tag" id="lvl-page-indicator">LEVELS 1 - 10</div>
+                <button class="retro-outline-btn" id="lvl-endless-btn" style="border-color: #FF8A00; color: #FF8A00;">⚔️ ENDLESS DOJO</button>
+                <button class="glow-red-start-btn" id="lvl-start-btn">START</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================
+         SCREEN 3: PROGRESS & STATS DASHBOARD & HEATMAP (ui_typing_dashboard.png)
+         =================================================================== -->
+    <div id="screen-stats-dashboard" class="game-screen" style="display: none;">
+        <div class="dashboard-outer-frame">
+            <!-- Header -->
+            <div class="view-header-bar dashboard-header">
+                <button class="retro-outline-btn small-back" id="stats-back-btn">← BACK</button>
+                <h1 class="view-title">PROGRESS & STATS</h1>
+                <button class="menu-action-pill gold" id="stats-cert-btn" style="margin-left: auto; margin-right: 14px;">📜 GET CERTIFICATE</button>
+                <img src="assets/keyjutsu_app_icon.png" alt="Badge" class="mini-header-badge">
+            </div>
+
+            <!-- 8 Metrics Grid (2 rows x 4 cols) -->
+            <div class="dashboard-metrics-grid">
+                <div class="dash-stat-box">
+                    <div class="stat-big-val stat-blue" id="dash-best-wpm">0 WPM</div>
+                    <div class="stat-sub-lbl">⚡ BEST WPM</div>
+                </div>
+                <div class="dash-stat-box">
+                    <div class="stat-big-val stat-blue" id="dash-avg-wpm">0 WPM</div>
+                    <div class="stat-sub-lbl">📊 AVERAGE WPM</div>
+                </div>
+                <div class="dash-stat-box">
+                    <div class="stat-big-val stat-green" id="dash-best-acc">0%</div>
+                    <div class="stat-sub-lbl">🎯 BEST ACCURACY</div>
+                </div>
+                <div class="dash-stat-box">
+                    <div class="stat-big-val stat-green" id="dash-avg-acc">0%</div>
+                    <div class="stat-sub-lbl">📈 AVERAGE ACCURACY</div>
+                </div>
+
+                <div class="dash-stat-box">
+                    <div class="stat-big-val stat-yellow" id="dash-total-tests">0</div>
+                    <div class="stat-sub-lbl">⏱ TOTAL TESTS</div>
+                </div>
+                <div class="dash-stat-box">
+                    <div class="stat-big-val stat-yellow" id="dash-practice-time">0s</div>
+                    <div class="stat-sub-lbl">⏳ PRACTICE TIME</div>
+                </div>
+                <div class="dash-stat-box">
+                    <div class="stat-big-val stat-split">
+                        <span id="dash-completed-count" class="stat-gold">0</span>
+                        <span class="stat-divider">/</span>
+                        <span id="dash-unlocked-count" class="stat-cyan">1 / 100</span>
+                    </div>
+                    <div class="stat-sub-lbl">🏆 COMPLETED • 🔓 UNLOCKED</div>
+                </div>
+                <div class="dash-stat-box">
+                    <div class="stat-big-val stat-gold" id="dash-total-score">0</div>
+                    <div class="stat-sub-lbl">⭐ TOTAL SCORE</div>
+                </div>
+            </div>
+
+            <!-- Keyboard Mastery & Visual QWERTY Heatmap -->
+            <div class="heatmap-container-box">
+                <div class="heatmap-header-row">
+                    <div class="heatmap-title">⌨️ KEYBOARD MASTERY</div>
+                    <div class="heatmap-legend">
+                        <span class="legend-item"><span class="legend-dot weak"></span> WEAK (&lt;80%)</span>
+                        <span class="legend-item"><span class="legend-dot developing"></span> DEVELOPING (80-89%)</span>
+                        <span class="legend-item"><span class="legend-dot strong"></span> STRONG (≥90%)</span>
+                        <span class="legend-item"><span class="legend-dot nodata"></span> NO DATA</span>
+                    </div>
+                </div>
+                <div class="heatmap-subnote">ⓘ Hover any key to inspect analytics | Click for detailed breakdown</div>
+
+                <!-- Visual QWERTY Heatmap Keys -->
+                <div class="interactive-heatmap-keyboard" id="heatmap-keyboard">
+                    <!-- Populated dynamically: Row 1 (Q-P), Row 2 (A-L), Row 3 (Z-M) -->
+                </div>
+                <div id="heatmap-key-tooltip" class="heatmap-tooltip">Click or hover any key to view error analytics</div>
+            </div>
+
+            <!-- Weak Keys & Strong Keys Showcase -->
+            <div class="weak-strong-split-row">
+                <!-- Weak Keys -->
+                <div class="keys-showcase-panel weak-panel">
+                    <div class="panel-header-bar">
+                        <span class="panel-title weak-title">⚠️ WEAK KEYS</span>
+                        <button class="practice-weak-btn" id="practice-weak-btn">⚡ PRACTICE WEAK KEYS →</button>
+                    </div>
+                    <div class="key-badges-row" id="weak-keys-badges">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Strong Keys -->
+                <div class="keys-showcase-panel strong-panel">
+                    <div class="panel-header-bar">
+                        <span class="panel-title strong-title">⭐ STRONG KEYS</span>
+                    </div>
+                    <div class="key-badges-row" id="strong-keys-badges">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================
+         SCREEN 4: TYPING TEST / PLACEMENT MODE (ui_placement_test.png)
+         =================================================================== -->
+    <div id="screen-typing-test" class="game-screen" style="display: none;">
+        <div class="screen-container typing-test-container">
+            <!-- Header -->
+            <div class="view-header-bar test-header">
+                <button class="retro-outline-btn small-back" id="test-back-btn">← BACK TO MENU</button>
+                <div class="header-center">
+                    <h1 class="view-title">KEYJUTSU — TYPING TEST MODE</h1>
+                    <div class="test-header-sub">Practice pure speed & accuracy with live performance metrics</div>
+                </div>
+                <img src="assets/keyjutsu_app_icon.png" alt="Badge" class="mini-header-badge">
+            </div>
+
+            <!-- Live Test Metrics Banner -->
+            <div class="test-metrics-banner">
+                <div class="test-metric-pill">
+                    <span class="pill-icon">⏱</span> TIME <span class="pill-num red-num" id="test-timer-num">60s</span>
+                </div>
+                <div class="test-metric-pill">
+                    <span class="pill-icon">⚡</span> WPM <span class="pill-num blue-num" id="test-wpm-num">0</span>
+                </div>
+                <div class="test-metric-pill">
+                    <span class="pill-icon">🎯</span> ACCURACY <span class="pill-num green-num" id="test-acc-num">100.0%</span>
+                </div>
+            </div>
+
+            <!-- Target Typing Text Box with Glowing Red Border -->
+            <div class="test-type-box-wrap">
+                <div class="type-box-tag">— TYPE THIS —</div>
+                <div class="test-type-box" id="test-type-box">
+                    <span id="test-typed-text" class="test-typed"></span><span id="test-cur-char" class="test-cur-char">A</span><span id="test-remain-text" class="test-remain">rouse accountability...</span>
+                </div>
+            </div>
+
+            <!-- Full Interactive QWERTY Keyboard with Glowing Active Keys -->
+            <div class="test-keyboard-wrapper">
+                <div class="physical-keyboard" id="interactive-test-keyboard">
+                    <!-- Row 1: Numbers & Symbols -->
+                    <div class="kb-row">
+                        <div class="kb-key" data-key="">~<br></div>
+                        <div class="kb-key" data-key="1">!<br>1</div>
+                        <div class="kb-key" data-key="2">@<br>2</div>
+                        <div class="kb-key" data-key="3">#<br>3</div>
+                        <div class="kb-key" data-key="4">$<br>4</div>
+                        <div class="kb-key" data-key="5">%<br>5</div>
+                        <div class="kb-key" data-key="6">^<br>6</div>
+                        <div class="kb-key" data-key="7">&amp;<br>7</div>
+                        <div class="kb-key" data-key="8">*<br>8</div>
+                        <div class="kb-key" data-key="9">(<br>9</div>
+                        <div class="kb-key" data-key="0">)<br>0</div>
+                        <div class="kb-key" data-key="-">_<br>-</div>
+                        <div class="kb-key" data-key="=">+<br>=</div>
+                        <div class="kb-key wide-key" data-key="backspace">BACKSPACE</div>
+                    </div>
+                    <!-- Row 2: Tab & QWERTYUIOP -->
+                    <div class="kb-row">
+                        <div class="kb-key wide-key" data-key="tab">TAB</div>
+                        <div class="kb-key" data-key="q">Q</div>
+                        <div class="kb-key" data-key="w">W</div>
+                        <div class="kb-key" data-key="e">E</div>
+                        <div class="kb-key" data-key="r">R</div>
+                        <div class="kb-key" data-key="t">T</div>
+                        <div class="kb-key" data-key="y">Y</div>
+                        <div class="kb-key" data-key="u">U</div>
+                        <div class="kb-key" data-key="i">I</div>
+                        <div class="kb-key" data-key="o">O</div>
+                        <div class="kb-key" data-key="p">P</div>
+                        <div class="kb-key" data-key="[">{<br>[</div>
+                        <div class="kb-key" data-key="]">}<br>]</div>
+                        <div class="kb-key" data-key="\">|<br>\</div>
+                    </div>
+                    <!-- Row 3: Caps & ASDFGHJKL -->
+                    <div class="kb-row">
+                        <div class="kb-key wide-key" data-key="capslock">CAPS</div>
+                        <div class="kb-key" data-key="a">A</div>
+                        <div class="kb-key" data-key="s">S</div>
+                        <div class="kb-key" data-key="d">D</div>
+                        <div class="kb-key" data-key="f">F</div>
+                        <div class="kb-key" data-key="g">G</div>
+                        <div class="kb-key" data-key="h">H</div>
+                        <div class="kb-key" data-key="j">J</div>
+                        <div class="kb-key" data-key="k">K</div>
+                        <div class="kb-key" data-key="l">L</div>
+                        <div class="kb-key" data-key=";">:<br>;</div>
+                        <div class="kb-key" data-key="'">"<br>'</div>
+                        <div class="kb-key wide-key" data-key="enter">ENTER</div>
+                    </div>
+                    <!-- Row 4: Shift & ZXCVBNM -->
+                    <div class="kb-row">
+                        <div class="kb-key xwide-key" data-key="shift">SHIFT</div>
+                        <div class="kb-key" data-key="z">Z</div>
+                        <div class="kb-key" data-key="x">X</div>
+                        <div class="kb-key" data-key="c">C</div>
+                        <div class="kb-key" data-key="v">V</div>
+                        <div class="kb-key" data-key="b">B</div>
+                        <div class="kb-key" data-key="n">N</div>
+                        <div class="kb-key" data-key="m">M</div>
+                        <div class="kb-key" data-key=",">&lt;<br>,</div>
+                        <div class="kb-key" data-key=".">&gt;<br>.</div>
+                        <div class="kb-key" data-key="/">?<br>/</div>
+                        <div class="kb-key xwide-key" data-key="shift">SHIFT</div>
+                    </div>
+                    <!-- Row 5: Spacebar & Modifiers -->
+                    <div class="kb-row">
+                        <div class="kb-key mod-key" data-key="control">CTRL</div>
+                        <div class="kb-key mod-key" data-key="meta">WIN</div>
+                        <div class="kb-key mod-key" data-key="alt">ALT</div>
+                        <div class="kb-key space-key" data-key=" ">—</div>
+                        <div class="kb-key mod-key" data-key="alt">ALT</div>
+                        <div class="kb-key mod-key" data-key="fn">FN</div>
+                        <div class="kb-key mod-key" data-key="control">CTRL</div>
+                    </div>
+                </div>
+
+                <div class="test-kb-hint">⌨ Press Space for spaces • Shift for Capital Letters • Keys light up in real time</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================
+         SCREEN 5 & 6: COMBAT VIEWPORT (arena_04_underground / arena_08_jungle)
+         =================================================================== -->
+    <div id="screen-combat" class="game-screen" style="display: none;">
+        <!-- Top Tactical HUD -->
+        <header class="game-hud-bar">
+            <div class="game-hud-container">
+                <div class="hud-left">
+                    <button class="hud-back-btn" id="combat-to-menu-btn">← MENU</button>
+                    <div class="game-brand-title">
+                        <span class="brand-rishu">RISHU</span> KEY JUTSU
+                    </div>
+                    <div class="hud-level-badge" id="hud-level-badge">LEVEL 01: DOJO</div>
+                    <div class="endless-hud-panel" id="endless-hud-panel" style="display: none;">
+                        <span id="endless-wave-tag">WAVE 01</span>
+                        <span class="endless-lives" id="endless-lives-tag">❤️❤️❤️</span>
+                    </div>
+                </div>
+
+                <div class="hud-center">
+                    <!-- Target Display Card in HUD Bar -->
+                    <div class="typing-target-box" id="typing-target-box">
+                        <div class="word-card" id="word-card">
+                            <span id="typed-part" class="typed-chars"></span><span id="current-char" class="current-char"></span><span id="remaining-part" class="remaining-chars"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hud-right">
+                    <div class="metric-item">
+                        <span class="metric-lbl">WPM</span>
+                        <span class="metric-val" id="hud-wpm">0</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-lbl">ACCURACY</span>
+                        <span class="metric-val" id="hud-acc">100%</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-lbl">COMBO</span>
+                        <span class="metric-val combo-glow" id="hud-combo">0x</span>
+                    </div>
+                    <button class="hud-icon-btn" id="bgm-toggle-btn" title="Toggle Battle Music (BGM)">🎵</button>
+                    <button class="hud-icon-btn" id="audio-toggle-btn" title="Toggle Sound FX">🔊</button>
+                    <button class="hud-icon-btn" id="pause-btn" title="Pause Game (ESC)">⏸</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Combat Canvas Area -->
+        <main class="game-viewport-wrap">
+            <div class="canvas-container" id="canvas-container">
+                <canvas id="gameCanvas" width="1280" height="720"></canvas>
+
+                <!-- Boss Tactical HUD Overlay (Shows on boss levels 10, 20, 30... 100) -->
+                <div class="boss-hud-overlay" id="boss-hud-overlay" style="display: none;">
+                    <div class="boss-title-row">
+                        <span class="boss-name-tag" id="boss-name-tag">👹 MASTER KENJI 🥋</span>
+                        <span class="boss-phase-badge" id="boss-phase-badge">PHASE 1</span>
+                    </div>
+                    <div class="boss-hp-track">
+                        <div class="boss-hp-fill" id="boss-hp-fill" style="width: 100%;"></div>
+                    </div>
+                    <div class="boss-warn-text" id="boss-warn-text">🔥 SPEED UP YOUR STRIKES TO OVERCOME THE BOSS!</div>
+                </div>
+
+                <!-- In-Match Fighter Health Bars Overlay -->
+                <div class="fighters-hud" id="fighters-hud">
+                    <!-- Player HP & Chakra Meter -->
+                    <div class="fighter-hp-wrap player-hp-wrap">
+                        <div class="hp-info">
+                            <span class="fighter-name">🥋 RISHU <span class="player-belt-tag belt-white" id="hud-player-belt">WHITE BELT</span></span>
+                            <span class="hp-num" id="player-hp-text">100 / 100</span>
+                        </div>
+                        <div class="hp-bar-track">
+                            <div class="hp-bar-fill player-fill" id="player-hp-bar" style="width: 100%;"></div>
+                        </div>
+                        <!-- Chakra / Jutsu Rage Meter -->
+                        <div class="chakra-wrap">
+                            <div class="chakra-info">
+                                <span class="chakra-lbl">⚡ CHAKRA RAGE</span>
+                                <span class="chakra-num" id="player-chakra-text">0%</span>
+                            </div>
+                            <div class="chakra-bar-track">
+                                <div class="chakra-bar-fill" id="player-chakra-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="chakra-ready-tag" id="chakra-ready-tag" style="display: none;">🔥 JUTSU READY! TYPE COMBO!</div>
+                        </div>
+                    </div>
+
+                    <!-- Arena Center Tag & Word Progress Badge -->
+                    <div class="arena-center-col">
+                        <div class="arena-center-tag" id="arena-tag-display">
+                            ARENA 04: UNDERGROUND FACILITY
+                        </div>
+                        <div class="level-word-counter" id="level-word-counter">🥋 STRIKE: 1 / 4</div>
+                    </div>
+
+                    <!-- Enemy HP -->
+                    <div class="fighter-hp-wrap enemy-hp-wrap">
+                        <div class="hp-info">
+                            <span class="hp-num" id="enemy-hp-text">100 / 100</span>
+                            <span class="fighter-name" id="enemy-name">SHADOW NINJA 🥷</span>
+                        </div>
+                        <div class="hp-bar-track">
+                            <div class="hp-bar-fill enemy-fill" id="enemy-hp-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Word floating right above enemy head in Canvas is rendered via game.js -->
+            </div>
+        </main>
+    </div>
+
+    <!-- ===================================================================
+         DIALOG MODALS (Settings, How To Play, Victory, Defeat, Pause, Test Result)
+         =================================================================== -->
+
+    <!-- SETTINGS MODAL -->
+    <div class="game-modal-overlay" id="settings-modal" style="display: none;">
+        <div class="game-modal-box">
+            <div class="modal-top-bar">
+                <h2>GAME SETTINGS</h2>
+                <button class="modal-close-btn" id="close-settings-btn">✕</button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-row">
+                    <span>Sound Effects & Hit Audio</span>
+                    <button class="game-btn game-btn-secondary" id="setting-sound-btn">MUTE SOUND</button>
+                </div>
+                <div class="setting-row">
+                    <span>Window Mode</span>
+                    <button class="game-btn game-btn-secondary" id="setting-fs-btn">TOGGLE FULLSCREEN</button>
+                </div>
+                <div class="setting-row">
+                    <span>Reset All Game Progress</span>
+                    <button class="game-btn game-btn-danger" id="setting-reset-btn">RESET SAVE DATA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOW TO PLAY MODAL -->
+    <div class="game-modal-overlay" id="howto-modal" style="display: none;">
+        <div class="game-modal-box">
+            <div class="modal-top-bar">
+                <h2>HOW TO PLAY RISHU KEY JUTSU</h2>
+                <button class="modal-close-btn" id="close-howto-btn">✕</button>
+            </div>
+            <div class="howto-content">
+                <p>🥋 <strong>Type to Strike:</strong> Every correct letter typed instantly triggers a martial arts punch, kick, or uppercut using trailer hit sounds.</p>
+                <p>⚡ <strong>Combos & Finishers:</strong> Typing strings of letters without mistakes builds combo multipliers. Completing a full word executes a heavy KO finisher strike.</p>
+                <p>⚠️ <strong>Beware Typos:</strong> Typos stagger your ninja and give enemies an opening to counter-attack and reduce your health.</p>
+                <p>🗺️ <strong>Progressive Arenas:</strong> Battle across 100 levels spanning 11 unique arenas, from the Training Dojo to the Final Key Summit.</p>
+                <p style="border-top: 1px solid #1E283D; padding-top: 10px; font-size: 0.8rem; color: #8C99AB;">
+                    Developed by <strong>Code With Rishabh (Rishabh Yadav)</strong> • 
+                    Email: <a href="mailto:ysrishabh017@gmail.com" style="color: #42E88A;">ysrishabh017@gmail.com</a> • 
+                    GitHub: <a href="https://github.com/rishabhyadav47383" target="_blank" style="color: #00D2FF;">rishabhyadav47383</a> • 
+                    Instagram: <a href="https://www.instagram.com/rishabh__yadav777?stkn=MWpncXM0MWV3OXd1cw==" target="_blank" style="color: #FF5A72;">@rishabh__yadav777</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- VICTORY MODAL -->
+    <div class="game-modal-overlay" id="victory-modal" style="display: none;">
+        <div class="game-modal-box">
+            <div class="victory-header">
+                <div class="victory-tag">STAGE CLEARED</div>
+                <h2 id="victory-stage-title">LEVEL 01 DEFEATED</h2>
+            </div>
+
+            <div class="victory-rank-showcase">
+                <div class="rank-stamp-circle" id="victory-rank-stamp">S</div>
+                <div class="rank-name-lbl" id="victory-rank-name">SUPREME GRANDMASTER</div>
+            </div>
+
+            <div class="victory-stats-grid">
+                <div class="v-stat-card">
+                    <span class="v-stat-lbl">TYPING SPEED</span>
+                    <span class="v-stat-val" id="v-wpm">45 WPM</span>
+                </div>
+                <div class="v-stat-card">
+                    <span class="v-stat-lbl">ACCURACY</span>
+                    <span class="v-stat-val" id="v-acc">98%</span>
+                </div>
+                <div class="v-stat-card">
+                    <span class="v-stat-lbl">MAX COMBO</span>
+                    <span class="v-stat-val" id="v-combo">34x</span>
+                </div>
+                <div class="v-stat-card">
+                    <span class="v-stat-lbl">RATING</span>
+                    <span class="v-stat-val" id="v-stars">⭐⭐⭐</span>
+                </div>
+            </div>
+
+            <div class="modal-actions-row">
+                <button class="game-btn game-btn-secondary" id="retry-level-btn">REPLAY STAGE</button>
+                <button class="game-btn" id="victory-cert-btn" style="background: #FFD700; color: #000; font-weight: 800;">📜 CERTIFICATE</button>
+                <button class="game-btn game-btn-primary" id="next-level-btn">NEXT LEVEL →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEFEAT MODAL -->
+    <div class="game-modal-overlay" id="defeat-modal" style="display: none;">
+        <div class="game-modal-box defeat-box">
+            <div class="defeat-banner">DEFEATED</div>
+            <p class="defeat-desc">The enemy broke your rhythm. Typos give opponents the opening to counter-strike.</p>
+
+            <div class="defeat-stats">
+                <div>WPM: <span id="d-wpm">0</span></div>
+                <div>Accuracy: <span id="d-acc">0%</span></div>
+            </div>
+
+            <div class="modal-actions-row">
+                <button class="game-btn game-btn-secondary" id="defeat-menu-btn">MENU</button>
+                <button class="game-btn game-btn-primary" id="defeat-retry-btn">TRY AGAIN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SURVIVAL GAMEOVER MODAL -->
+    <div class="game-modal-overlay" id="survival-modal" style="display: none;">
+        <div class="game-modal-box defeat-box">
+            <div class="defeat-banner" style="color: #FF8A00;">DOJO DEFENSE ENDED</div>
+            <p class="defeat-desc" id="survival-waves-desc">You defended the Dojo across multiple intense waves of ninja invaders!</p>
+
+            <div class="defeat-stats">
+                <div>WAVES: <span id="s-waves" style="color: #FFD700;">1</span></div>
+                <div>KILLS: <span id="s-kills" style="color: #42E88A;">0</span></div>
+                <div>BEST WPM: <span id="s-wpm" style="color: #00D2FF;">0</span></div>
+            </div>
+
+            <div class="modal-actions-row">
+                <button class="game-btn game-btn-secondary" id="survival-menu-btn">MENU</button>
+                <button class="game-btn" id="survival-cert-btn" style="background: #FFD700; color: #000; font-weight: 800;">📜 CERTIFICATE</button>
+                <button class="game-btn game-btn-primary" id="survival-retry-btn">RETRY DOJO</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAUSE MODAL -->
+    <div class="game-modal-overlay" id="pause-modal" style="display: none;">
+        <div class="game-modal-box pause-box">
+            <h2>GAME PAUSED</h2>
+            <p>Take a breath, warrior. Press Resume or ESC to continue fighting.</p>
+            <div class="modal-actions-row">
+                <button class="game-btn game-btn-secondary" id="quit-to-menu-btn">QUIT TO MENU</button>
+                <button class="game-btn game-btn-primary" id="resume-game-btn">RESUME COMBAT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEST RESULTS MODAL -->
+    <div class="game-modal-overlay" id="test-result-modal" style="display: none;">
+        <div class="game-modal-box">
+            <div class="victory-header">
+                <div class="victory-tag">SPEED TEST COMPLETE</div>
+                <h2>PLACEMENT RESULTS</h2>
+            </div>
+            <div class="victory-rank-showcase">
+                <div class="rank-stamp-circle" id="test-result-rank">A</div>
+                <div class="rank-name-lbl" id="test-result-title">A - EXCELLENT STRIKER</div>
+            </div>
+            <div class="victory-stats-grid">
+                <div class="v-stat-card">
+                    <span class="v-stat-lbl">FINAL SPEED</span>
+                    <span class="v-stat-val" id="test-res-wpm">65 WPM</span>
+                </div>
+                <div class="v-stat-card">
+                    <span class="v-stat-lbl">ACCURACY</span>
+                    <span class="v-stat-val" id="test-res-acc">98.5%</span>
+                </div>
+                <div class="v-stat-card">
+                    <span class="v-stat-lbl">TIER UNLOCKED</span>
+                    <span class="v-stat-val" id="test-res-tier">LEVEL 25</span>
+                </div>
+                <div class="v-stat-card">
+                    <span class="v-stat-lbl">KEYBOARD ACC</span>
+                    <span class="v-stat-val" id="test-res-grade">STRONG</span>
+                </div>
+            </div>
+            <div class="modal-actions-row">
+                <button class="game-btn game-btn-secondary" id="test-res-retry">RETRY TEST</button>
+                <button class="game-btn game-btn-primary" id="test-res-apply">ENTER COMBAT MAP →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MARTIAL ARTS FIGHTER CERTIFICATE MODAL -->
+    <div class="game-modal-overlay" id="certificate-modal" style="display: none;">
+        <div class="game-modal-box cert-modal-box">
+            <div class="modal-top-bar">
+                <h2>🥋 OFFICIAL MARTIAL ARTS TYPING CERTIFICATION</h2>
+                <button class="modal-close-btn" id="close-cert-btn">✕</button>
+            </div>
+
+            <div class="cert-inputs-row">
+                <label for="cert-fighter-name" style="font-size: 0.8rem; font-weight: 700; color: #FFD700;">WARRIOR NAME:</label>
+                <input type="text" id="cert-fighter-name" class="cert-name-input" value="WARRIOR RISHU" maxlength="28" placeholder="Enter Your Warrior Name">
+                <button class="game-btn game-btn-secondary" id="cert-refresh-btn" style="padding: 8px 16px;">🔄 UPDATE</button>
+            </div>
+
+            <div class="cert-preview-wrap">
+                <canvas id="cert-canvas" width="1200" height="800"></canvas>
+            </div>
+
+            <div class="modal-actions-row">
+                <button class="game-btn game-btn-secondary" id="cert-copy-btn">📋 COPY BRAGGING STATS</button>
+                <button class="game-btn" id="cert-download-btn" style="background: #FFD700; color: #000; font-weight: 800;">📥 DOWNLOAD CERTIFICATE (PNG)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/hit_sounds_data.js"></script>
+    <script src="game.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(() => {});
+            });
+        }
+    </script>
+</body>
+</html>

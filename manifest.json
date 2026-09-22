@@ -1,0 +1,18 @@
+﻿{
+  "name": "Rishu Key Jutsu",
+  "short_name": "KeyJutsu",
+  "description": "Action Martial Arts Touch Typing Combat Game created by Code With Rishabh",
+  "start_url": "play.html",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#080B10",
+  "theme_color": "#FF2A4B",
+  "icons": [
+    {
+      "src": "assets/keyjutsu_app_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

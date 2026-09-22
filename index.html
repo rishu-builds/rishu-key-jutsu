@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishu Key Jutsu — Martial Arts Touch Typing Combat</title>
+    <meta name="description" content="Rishu Key Jutsu is an action martial arts touch typing combat game created by Rishabh. Strike through typing precision across 100 levels and 11 arenas.">
+    <meta property="og:title" content="Rishu Key Jutsu — Type to Fight">
+    <meta property="og:description" content="Master touch typing through real-time martial arts combat. 100 levels, 11 arenas, 7 ninja ranks. Created by Rishabh.">
+    <meta property="og:image" content="assets/keyjutsu_horizontal_logo.png">
+    <link rel="icon" type="image/png" href="assets/keyjutsu_app_icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF2A4B">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Tactical Navbar -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="brand-logo">
+                <img src="assets/keyjutsu_horizontal_logo.png" alt="Rishu Key Jutsu Logo">
+            </a>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <ul class="nav-menu">
+                    <li><a href="#game" class="nav-link">GAME</a></li>
+                    <li><a href="#features" class="nav-link">FEATURES</a></li>
+                    <li><a href="#arenas" class="nav-link">ARENAS</a></li>
+                    <li><a href="#ranks" class="nav-link">RANKS</a></li>
+                    <li><a href="#placement" class="nav-link">PLACEMENT</a></li>
+                    <li><a href="#media" class="nav-link">MEDIA</a></li>
+                    <li><a href="#specs" class="nav-link">SPECS</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="play.html" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.84rem;">⚔️ PLAY ONLINE</a>
+                    <a href="download.html" class="btn btn-primary" id="nav-download-btn" style="padding: 10px 20px; font-size: 0.84rem;">⬇️ DOWNLOAD FREE</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="game">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-badge" id="hero-badge">
+                        <span id="hero-badge-label">OFFICIAL RELEASE</span> • <span id="hero-badge-time">BY CODE WITH RISHABH</span>
+                    </div>
+
+                    <h1 class="hero-title">RISHU KEY JUTSU.<br><span>TYPE TO FIGHT.</span></h1>
+
+                    <p class="hero-description">
+                        Master touch typing through fluid martial arts combat. Every accurate keystroke lands striking punches, kicks, and devastating combos, while typos leave your shinobi vulnerable to enemy counters. Battle through 100 progressive levels across 11 atmospheric cyber-dojo arenas.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="download.html" class="btn btn-primary" style="padding: 16px 34px; font-size: 1.05rem; background: linear-gradient(180deg, #FF3B56 0%, #D81B36 100%); box-shadow: 0 6px 25px rgba(255, 42, 75, 0.5);">⬇️ DOWNLOAD FREE (WINDOWS)</a>
+                        <a href="play.html" class="btn btn-secondary" style="padding: 16px 28px; font-size: 1.05rem;">⚔️ PLAY IN BROWSER</a>
+                    </div>
+
+                    <div class="hero-hud-tags">
+                        <div class="hero-hud-tag-item">✓ 100 LEVELS & 11 ARENAS</div>
+                        <div class="hero-hud-tag-item">✓ CHAKRA RAGE & BOSS FIGHTS</div>
+                        <div class="hero-hud-tag-item">✓ ENDLESS DOJO & BELT RANKS</div>
+                        <div class="hero-hud-tag-item">✓ 100% OFFLINE & FREE PC APP</div>
+                    </div>
+                </div>
+
+                <div class="hero-frame-card">
+                    <div class="frame-header">
+                        <div class="frame-dots">
+                            <span class="frame-dot red"></span>
+                            <span class="frame-dot yellow"></span>
+                            <span class="frame-dot green"></span>
+                        </div>
+                        <div class="frame-label">KEYJUTSU COMBAT ENGINE — GODOT 4</div>
+                    </div>
+                    <div class="frame-img-box">
+                        <img src="assets/main_menu_bg.png" alt="Rishu Key Jutsu Cover Art">
+                        <span class="frame-tag">STAGE 100 GRANDMASTER SUMMIT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combat Mechanics Process Flow -->
+    <section class="section" style="background: var(--color-surface-deep); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">01 / COMBAT SYSTEM</span>
+                <h2 class="section-title">How Typing Becomes Martial Arts</h2>
+                <p class="section-desc">Rishu Key Jutsu translates raw typing metrics into immediate martial arts actions in real time.</p>
+            </div>
+
+            <div class="combat-flow-grid">
+                <div class="flow-card">
+                    <div class="flow-number">01</div>
+                    <div class="flow-title">TYPE</div>
+                    <div class="flow-desc">Target words appear above enemy combatants. Type the letters with precision.</div>
+                </div>
+
+                <div class="flow-card">
+                    <div class="flow-number">02</div>
+                    <div class="flow-title">STRIKE</div>
+                    <div class="flow-desc">Correct keystrokes instantly trigger stylized shinobi martial arts strikes, kicks, and counterattacks.</div>
+                </div>
+
+                <div class="flow-card">
+                    <div class="flow-number">03</div>
+                    <div class="flow-title">DEFEND</div>
+                    <div class="flow-desc">Typos break your combo chain and open your health bar to enemy damage. Accuracy is survival.</div>
+                </div>
+
+                <div class="flow-card">
+                    <div class="flow-number">04</div>
+                    <div class="flow-title">MASTER</div>
+                    <div class="flow-desc">Build your WPM speed to conquer level targets scaling from 15 WPM up to 148 WPM.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">02 / CORE FEATURES</span>
+                <h2 class="section-title">Built For Skill Progression</h2>
+                <p class="section-desc">Responsive combat engine focused on instant input responsiveness, dynamic combat scaling, and practice analytics.</p>
+            </div>
+
+            <div class="features-stack">
+                <div class="feature-panel">
+                    <div>
+                        <span class="section-label">FEATURE 01</span>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 16px;">Real-Time Touch Typing Combat</h3>
+                        <p style="margin-bottom: 24px;">
+                            Level speed requirements scale dynamically from 15 WPM in early Dojo training up to 148 WPM at the Level 100 Grandmaster Summit. Enemy attack rates react directly to your typing speed.
+                        </p>
+                        <a href="#arenas" class="btn btn-secondary">EXPLORE 11 ARENAS →</a>
+                    </div>
+                    <div class="feature-panel-img">
+                        <img src="assets/arena_01_training.png" alt="Rishu Key Jutsu Dojo Combat Arena Level 1" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="feature-panel reverse">
+                    <div class="feature-panel-img">
+                        <img src="assets/ui_level_select.png" alt="Level Selection Screen" loading="lazy">
+                    </div>
+                    <div>
+                        <span class="section-label">FEATURE 02</span>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 16px;">100 Level Progression Map</h3>
+                        <p style="margin-bottom: 24px;">
+                            Ascend through 100 levels featuring distinct word sets, speed targets, and 3-star rating metrics. Earn stars by finishing levels with high accuracy and minimal damage taken.
+                        </p>
+                        <a href="#ranks" class="btn btn-secondary">VIEW NINJA RANKS →</a>
+                    </div>
+                </div>
+
+                <div class="feature-panel">
+                    <div>
+                        <span class="section-label">FEATURE 03</span>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 16px;">Performance Analytics & Dashboard</h3>
+                        <p style="margin-bottom: 24px;">
+                            Track key-by-key accuracy streaks, WPM speed progression graphs, practice time, and completed levels. The built-in dashboard highlights your weak keys so you can target error patterns.
+                        </p>
+                        <a href="download.html" class="btn btn-secondary">GET GAME FOR WINDOWS →</a>
+                    </div>
+                    <div class="feature-panel-img">
+                        <img src="assets/ui_typing_dashboard.png" alt="Typing Analytics Dashboard UI" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11 Arenas Section -->
+    <section class="section" id="arenas" style="background: var(--color-surface-deep);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">03 / ENVIRONMENT STAGES</span>
+                <h2 class="section-title">11 Authentic Combat Arenas</h2>
+                <p class="section-desc">Fight across 11 distinct arenas unlocked as your WPM speed and level progression increase.</p>
+            </div>
+
+            <div class="arena-filter-tabs">
+                <button class="tab-btn active" data-filter="all">ALL ARENAS</button>
+                <button class="tab-btn" data-filter="tier1">EARLY (L1–L30)</button>
+                <button class="tab-btn" data-filter="tier2">MID (L31–L60)</button>
+                <button class="tab-btn" data-filter="tier3">HIGH (L61–L100)</button>
+            </div>
+
+            <div class="arenas-grid">
+                <div class="arena-card" data-tier="tier1">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_01_training.png" alt="Training Dojo Arena" loading="lazy">
+                        <span class="arena-badge">ARENA 01</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Training Dojo Arena</h3>
+                        <div class="arena-meta">Levels 1 – 10 • Target: 15–24 WPM</div>
+                    </div>
+                </div>
+
+                <div class="arena-card" data-tier="tier1">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_02_keyboard.png" alt="Keyboard Circuit Arena" loading="lazy">
+                        <span class="arena-badge">ARENA 02</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Keyboard Circuit Arena</h3>
+                        <div class="arena-meta">Levels 11 – 20 • Target: 25–34 WPM</div>
+                    </div>
+                </div>
+
+                <div class="arena-card" data-tier="tier1">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_03_rooftop.png" alt="Neon Rooftop Arena" loading="lazy">
+                        <span class="arena-badge">ARENA 03</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Neon Rooftop Arena</h3>
+                        <div class="arena-meta">Levels 21 – 30 • Target: 35–46 WPM</div>
+                    </div>
+                </div>
+
+                <div class="arena-card" data-tier="tier2">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_04_underground.png" alt="Underground Facility" loading="lazy">
+                        <span class="arena-badge">ARENA 04</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Underground Facility</h3>
+                        <div class="arena-meta">Levels 31 – 40 • Target: 47–59 WPM</div>
+                    </div>
+                </div>
+
+                <div class="arena-card" data-tier="tier2">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_05_meadow.png" alt="Emerald Samurai Meadow" loading="lazy">
+                        <span class="arena-badge">ARENA 05</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Emerald Samurai Meadow</h3>
+                        <div class="arena-meta">Levels 41 – 50 • Target: 60–72 WPM</div>
+                    </div>
+                </div>
+
+                <div class="arena-card" data-tier="tier2">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_06_coastal.png" alt="Coastal Cliffside Fortress" loading="lazy">
+                        <span class="arena-badge">ARENA 06</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Coastal Cliffside Fortress</h3>
+                        <div class="arena-meta">Levels 51 – 60 • Target: 73–87 WPM</div>
+                    </div>
+                </div>
+
+                <div class="arena-card" data-tier="tier3">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_07_harbor.png" alt="Industrial Cargo Harbor" loading="lazy">
+                        <span class="arena-badge">ARENA 07</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Industrial Cargo Harbor</h3>
+                        <div class="arena-meta">Levels 61 – 70 • Target: 88–101 WPM</div>
+                    </div>
+                </div>
+
+                <div class="arena-card" data-tier="tier3">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_08_jungle.png" alt="Bamboo Jungle Ruins" loading="lazy">
+                        <span class="arena-badge">ARENA 08</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Bamboo Jungle Ruins</h3>
+                        <div class="arena-meta">Levels 71 – 80 • Target: 102–115 WPM</div>
+                    </div>
+                </div>
+
+                <div class="arena-card" data-tier="tier3">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_09_frozen.png" alt="Frozen Mountain Pass" loading="lazy">
+                        <span class="arena-badge">ARENA 09</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Frozen Mountain Pass</h3>
+                        <div class="arena-meta">Levels 81 – 90 • Target: 116–131 WPM</div>
+                    </div>
+                </div>
+
+                <div class="arena-card" data-tier="tier3">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_10_sky.png" alt="Celestial Sky Realm" loading="lazy">
+                        <span class="arena-badge">ARENA 10</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Celestial Sky Realm</h3>
+                        <div class="arena-meta">Levels 91 – 99 • Target: 132–146 WPM</div>
+                    </div>
+                </div>
+
+                <div class="arena-card" data-tier="tier3">
+                    <div class="arena-img-box">
+                        <img src="assets/arena_11_final_key.png" alt="Final Key Summit" loading="lazy">
+                        <span class="arena-badge">ARENA 11</span>
+                    </div>
+                    <div class="arena-info">
+                        <h3 class="arena-title">Final Key Summit</h3>
+                        <div class="arena-meta">Level 100 • Target: 148 WPM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ninja Rank Matrix & Simulator Section -->
+    <section class="section" id="ranks">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">04 / PERFORMANCE EVALUATION</span>
+                <h2 class="section-title">Official 7-Tier Ninja Rank System</h2>
+                <p class="section-desc">Combat efficiency is calculated using the official formula: 40% WPM + 40% Accuracy + 20% Consistency.</p>
+            </div>
+
+            <!-- Rank Simulator Widget -->
+            <div class="rank-calc-container">
+                <div>
+                    <span class="section-label">INTERACTIVE RANK CALCULATOR</span>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Test Your Predicted Rank</h3>
+
+                    <div style="margin-bottom: 20px;">
+                        <label class="calc-label">TARGET SPEED: <span id="calc-wpm-val" style="color: var(--color-cyan);">65</span> WPM</label>
+                        <input type="range" id="calc-wpm-slider" min="15" max="150" value="65" class="calc-slider">
+                    </div>
+
+                    <div>
+                        <label class="calc-label">ACCURACY: <span id="calc-acc-val" style="color: var(--color-cyan);">95%</span></label>
+                        <input type="range" id="calc-acc-slider" min="50" max="100" value="95" class="calc-slider">
+                    </div>
+                </div>
+
+                <div class="calc-display-box">
+                    <div class="calc-rank-letter" id="calc-rank-letter">B</div>
+                    <div class="calc-rank-title" id="calc-rank-title">B - GOOD ADEPT</div>
+                </div>
+            </div>
+
+            <div class="ranks-matrix-grid">
+                <div class="rank-matrix-card" data-rank="S">
+                    <div class="rank-letter-val">S</div>
+                    <div class="rank-title-lbl">SUPREME</div>
+                    <div class="rank-score-lbl">Score 90.0+</div>
+                </div>
+                <div class="rank-matrix-card" data-rank="A">
+                    <div class="rank-letter-val">A</div>
+                    <div class="rank-title-lbl">EXCELLENT</div>
+                    <div class="rank-score-lbl">Score 80.0+</div>
+                </div>
+                <div class="rank-matrix-card" data-rank="B">
+                    <div class="rank-letter-val">B</div>
+                    <div class="rank-title-lbl">GOOD</div>
+                    <div class="rank-score-lbl">Score 70.0+</div>
+                </div>
+                <div class="rank-matrix-card" data-rank="C">
+                    <div class="rank-letter-val">C</div>
+                    <div class="rank-title-lbl">AVERAGE</div>
+                    <div class="rank-score-lbl">Score 60.0+</div>
+                </div>
+                <div class="rank-matrix-card" data-rank="D">
+                    <div class="rank-letter-val">D</div>
+                    <div class="rank-title-lbl">DEVELOPING</div>
+                    <div class="rank-score-lbl">Score 50.0+</div>
+                </div>
+                <div class="rank-matrix-card" data-rank="E">
+                    <div class="rank-letter-val">E</div>
+                    <div class="rank-title-lbl">LOW</div>
+                    <div class="rank-score-lbl">Score 40.0+</div>
+                </div>
+                <div class="rank-matrix-card" data-rank="F">
+                    <div class="rank-letter-val">F</div>
+                    <div class="rank-title-lbl">WEAK</div>
+                    <div class="rank-score-lbl">Score &lt;40.0</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Test Feature Section -->
+    <section class="section" id="placement" style="background: var(--color-surface-deep);">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <span class="section-label">05 / SKILL EVALUATION</span>
+                    <h2 class="section-title">Standalone Placement Test</h2>
+                    <p style="margin-bottom: 24px;">
+                        Skip early beginner levels if you are already an experienced touch typist. Taking the Placement Test measures your baseline WPM and accuracy to immediately unlock your corresponding level tier on the 100 Level Progression Map.
+                    </p>
+                    <a href="download.html" class="btn btn-primary">DOWNLOAD KEYJUTSU FREE</a>
+                </div>
+                <div class="hero-frame-card">
+                    <img src="assets/ui_placement_test.png" alt="Rishu Key Jutsu Placement Test UI Screen" loading="lazy" style="width: 100%; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshot Gallery & Media Showcase Section -->
+    <section class="section" id="media">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">06 / GAMEPLAY MEDIA</span>
+                <h2 class="section-title">Official Screenshots & Trailer</h2>
+                <p class="section-desc">Authentic unedited screenshots and gameplay trailer.</p>
+            </div>
+
+            <!-- Native Gameplay Video Trailer -->
+            <div style="margin-bottom: 48px; background: var(--color-surface-deep); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; padding: 12px;">
+                <video controls style="width: 100%; height: auto; border-radius: var(--radius-md); display: block;" poster="assets/main_menu_bg.png" preload="none">
+                    <source src="assets/gameplay.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="assets/ui_main_menu.png" alt="Main Menu UI Screen" loading="lazy">
+                </div>
+                <div class="gallery-card">
+                    <img src="assets/ui_level_select.png" alt="100 Level Select Map" loading="lazy">
+                </div>
+                <div class="gallery-card">
+                    <img src="assets/ui_typing_dashboard.png" alt="Typing Dashboard Stats" loading="lazy">
+                </div>
+                <div class="gallery-card">
+                    <img src="assets/ui_placement_test.png" alt="Skill Placement Test UI" loading="lazy">
+                </div>
+                <div class="gallery-card">
+                    <img src="assets/arena_04_underground.png" alt="Underground Facility Combat Scene" loading="lazy">
+                </div>
+                <div class="gallery-card">
+                    <img src="assets/arena_08_jungle.png" alt="Bamboo Jungle Ruins Arena" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Requirements Section -->
+    <section class="section" id="specs" style="background: var(--color-surface-deep);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">07 / TECHNICAL SPECS</span>
+                <h2 class="section-title">System Requirements</h2>
+                <p class="section-desc">KeyJutsu runs natively on Windows desktop systems (10/11) with zero external setup required.</p>
+            </div>
+
+            <div class="specs-table-grid">
+                <div class="spec-box">
+                    <h3 class="spec-box-title">MINIMUM REQUIREMENTS</h3>
+                    <ul class="spec-list">
+                        <li><strong>OS:</strong> Windows 10 / 11 64-bit</li>
+                        <li><strong>Processor:</strong> Dual Core 2.0 GHz Intel/AMD</li>
+                        <li><strong>Memory:</strong> 4 GB RAM</li>
+                        <li><strong>Graphics:</strong> OpenGL 3.3 / DirectX 11 compatible</li>
+                        <li><strong>Storage:</strong> 100 MB available space</li>
+                        <li><strong>Input:</strong> Standard Mechanical / Laptop QWERTY Keyboard</li>
+                    </ul>
+                </div>
+
+                <div class="spec-box">
+                    <h3 class="spec-box-title">RECOMMENDED SPECS</h3>
+                    <ul class="spec-list">
+                        <li><strong>OS:</strong> Windows 11 64-bit</li>
+                        <li><strong>Processor:</strong> Quad Core 3.0 GHz or higher</li>
+                        <li><strong>Memory:</strong> 8 GB RAM</li>
+                        <li><strong>Graphics:</strong> Dedicated GPU (NVIDIA / AMD)</li>
+                        <li><strong>Storage:</strong> 500 MB SSD space</li>
+                        <li><strong>Input:</strong> NKRO Mechanical Keyboard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA Section -->
+    <section class="section" id="download">
+        <div class="container">
+            <div class="download-card">
+                <span class="section-label">100% FREE GAME DOWNLOAD</span>
+                <h2 style="font-size: 2.4rem; margin: 12px 0 16px;">DOWNLOAD RISHU KEY JUTSU</h2>
+
+                <p style="margin: 20px auto 32px auto; max-width: 640px;">
+                    Download Rishu Key Jutsu for Windows. 100% offline single-player martial arts combat software with zero ads, zero telemetry, zero payment, and zero microtransactions.
+                </p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="download.html" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.05rem;">⬇️ DOWNLOAD FREE FOR WINDOWS</a>
+                    <a href="play.html" class="btn btn-secondary" style="padding: 16px 28px; font-size: 1.05rem;">⚔️ PLAY IN BROWSER</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--color-surface-deep);">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="section-label">08 / DOCUMENTATION</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        <span>What is Rishu Key Jutsu?</span>
+                        <span>▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        Rishu Key Jutsu is an offline martial arts touch-typing combat game created by Rishabh. Every typed character executes martial arts strikes and counterattacks in real-time.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is the game completely free?</span>
+                        <span>▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes! Rishu Key Jutsu is 100% free to download and play. There are zero ads, zero payment prompts, and zero microtransactions.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does Rishu Key Jutsu require an internet connection?</span>
+                        <span>▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        No. Rishu Key Jutsu is a 100% offline standalone game with zero telemetry, zero analytics tracking, and zero ads.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How are Ninja Ranks calculated?</span>
+                        <span>▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        Ranks (S, A, B, C, D, E, F) are calculated using the official formula: 40% WPM + 40% Accuracy + 20% Consistency.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img src="assets/keyjutsu_horizontal_logo.png" alt="Rishu Key Jutsu Logo">
+                    </div>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        Rishu Key Jutsu — Martial Arts Touch Typing Combat.<br>
+                        Created by <strong>Code With Rishabh (Rishabh Yadav)</strong>.
+                    </p>
+                    <div style="display: flex; gap: 10px; margin-top: 12px;">
+                        <a href="https://github.com/rishabhyadav47383" target="_blank" rel="noopener noreferrer" style="color: #00D2FF; font-size: 0.85rem; font-weight: 700; text-decoration: none;">GitHub</a> • 
+                        <a href="https://www.instagram.com/rishabh__yadav777?stkn=MWpncXM0MWV3OXd1cw==" target="_blank" rel="noopener noreferrer" style="color: #FF5A72; font-size: 0.85rem; font-weight: 700; text-decoration: none;">Instagram</a> • 
+                        <a href="mailto:ysrishabh017@gmail.com" style="color: #42E88A; font-size: 0.85rem; font-weight: 700; text-decoration: none;">Email</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="font-family: var(--font-tech); font-size: 0.9rem; color: var(--color-cyan); margin-bottom: 16px;">NAVIGATION</h4>
+                    <ul class="footer-links">
+                        <li><a href="download.html">⬇️ Download Free</a></li>
+                        <li><a href="play.html">⚔️ Play in Browser</a></li>
+                        <li><a href="#game">Overview</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#arenas">11 Arenas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="font-family: var(--font-tech); font-size: 0.9rem; color: var(--color-cyan); margin-bottom: 16px;">CONNECT & SUPPORT</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:ysrishabh017@gmail.com">ysrishabh017@gmail.com</a></li>
+                        <li><a href="https://github.com/rishabhyadav47383" target="_blank" rel="noopener noreferrer">GitHub / rishabhyadav47383</a></li>
+                        <li><a href="https://www.instagram.com/rishabh__yadav777?stkn=MWpncXM0MWV3OXd1cw==" target="_blank" rel="noopener noreferrer">Instagram / @rishabh__yadav777</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="licenses.html">Licenses</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 Code With Rishabh (Rishabh Yadav). 100% Free Game. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Accessible Screenshot Lightbox -->
+    <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">✕</button>
+            <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous Image">‹</button>
+            <img id="lightbox-img" src="" alt="Screenshot Preview">
+            <button class="lightbox-next" id="lightbox-next" aria-label="Next Image">›</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(() => {});
+            });
+        }
+    </script>
+</body>
+</html>

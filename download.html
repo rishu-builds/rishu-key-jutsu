@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Rishu Key Jutsu — Free Windows Desktop Edition</title>
+    <meta name="description" content="Download Rishu Key Jutsu for Windows PC. Official 100% free standalone martial arts touch-typing combat game created by Code With Rishabh (Rishabh Yadav).">
+    <link rel="icon" type="image/png" href="assets/keyjutsu_app_icon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        body {
+            background-color: #070A0F;
+            color: #F2F5F8;
+            font-family: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Top Navigation */
+        .download-navbar {
+            background: rgba(10, 14, 22, 0.92);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 14px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(14px);
+        }
+
+        .nav-logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 38px;
+            width: auto;
+        }
+
+        .nav-actions-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Page Layout */
+        .download-page-wrap {
+            max-width: 1120px;
+            margin: 44px auto 90px;
+            padding: 0 28px;
+            box-sizing: border-box;
+        }
+
+        /* Hero Banner Card */
+        .download-hero-card {
+            background: #0B1019;
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(0, 210, 255, 0.1);
+            margin-bottom: 36px;
+        }
+
+        .hero-art-box {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            background: #000000;
+            overflow: hidden;
+        }
+
+        .hero-art-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+        }
+
+        .hero-art-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(7, 10, 15, 0.1) 0%, rgba(7, 10, 15, 0.8) 100%);
+        }
+
+        .hero-badge-tag {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            background: rgba(8, 12, 20, 0.85);
+            border: 1px solid #00D2FF;
+            color: #00D2FF;
+            font-family: var(--font-tech);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            padding: 6px 14px;
+            border-radius: 4px;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-meta-bar {
+            padding: 24px 32px;
+            background: #0D131F;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .hero-title-group h1 {
+            font-size: 1.7rem;
+            color: #FFFFFF;
+            margin: 0 0 6px 0;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-title-group p {
+            color: #9DA8B8;
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Primary Download Action Card */
+        .primary-download-card {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.12) 0%, transparent 60%),
+                        linear-gradient(180deg, #10192A 0%, #0B1019 100%);
+            border: 1px solid rgba(0, 210, 255, 0.35);
+            border-radius: 12px;
+            padding: 44px 36px;
+            box-shadow: 0 0 50px rgba(0, 210, 255, 0.18);
+            margin-bottom: 36px;
+            text-align: center;
+            position: relative;
+        }
+
+        .primary-download-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 15%;
+            right: 15%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00D2FF, #42E88A, transparent);
+        }
+
+        .status-pill {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            background: rgba(0, 210, 255, 0.12);
+            color: #00D2FF;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            text-transform: uppercase;
+        }
+
+        .download-heading {
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .download-lead {
+            font-size: 1.02rem;
+            color: #A6B4C6;
+            max-width: 680px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+        }
+
+        .btn-download-hero {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            background: linear-gradient(180deg, #00E1FF 0%, #0072FF 100%);
+            color: #FFFFFF !important;
+            padding: 18px 44px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 10px 36px rgba(0, 160, 255, 0.45);
+            transition: all 0.22s ease-in-out;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 24px;
+        }
+
+        .btn-download-hero:hover {
+            background: linear-gradient(180deg, #38EAFF 0%, #1583FF 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 44px rgba(0, 180, 255, 0.65);
+        }
+
+        .btn-download-icon {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        .btn-download-text {
+            text-align: left;
+        }
+
+        .btn-download-main {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .btn-download-sub {
+            display: block;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .sub-options-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            font-size: 0.88rem;
+            color: #8391A3;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .sub-options-bar a {
+            color: #00D2FF;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.15s;
+        }
+
+        .sub-options-bar a:hover {
+            color: #6BE5FF;
+        }
+
+        .features-bullet-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            list-style: none;
+            margin: 0;
+        }
+
+        .features-bullet-row li {
+            font-size: 0.92rem;
+            color: #C0CAD7;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .features-bullet-row li span {
+            color: #42E88A;
+            font-weight: 900;
+        }
+
+        /* 3-Step Installation Flow */
+        .install-flow-section {
+            margin-bottom: 40px;
+        }
+
+        .section-subhead {
+            font-family: var(--font-tech);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #00D2FF;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .steps-three-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 820px) {
+            .steps-three-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .step-tile-card {
+            background: #0B1019;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 26px 24px;
+            transition: border-color 0.2s;
+        }
+
+        .step-tile-card:hover {
+            border-color: rgba(0, 210, 255, 0.4);
+        }
+
+        .step-tile-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .step-badge-num {
+            background: rgba(0, 210, 255, 0.15);
+            color: #00D2FF;
+            font-family: var(--font-tech);
+            font-size: 0.82rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+        }
+
+        .step-tile-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0;
+        }
+
+        .step-tile-desc {
+            font-size: 0.9rem;
+            color: #8C9CAE;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .step-tile-desc strong {
+            color: #E2E8F0;
+        }
+
+        /* Security Trust Box */
+        .security-card {
+            background: linear-gradient(180deg, #091515 0%, #070E10 100%);
+            border: 1px solid rgba(66, 232, 138, 0.35);
+            border-radius: 10px;
+            padding: 26px 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 30px rgba(66, 232, 138, 0.08);
+        }
+
+        .security-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .security-header h3 {
+            color: #42E88A;
+            font-size: 1.15rem;
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .security-text {
+            color: #CBD5E1;
+            font-size: 0.92rem;
+            line-height: 1.65;
+            margin: 0 0 16px 0;
+        }
+
+        .security-smartscreen-notice {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 14px 18px;
+            font-size: 0.88rem;
+            color: #A3B2C3;
+            line-height: 1.6;
+        }
+
+        .security-smartscreen-notice strong {
+            color: #FFFFFF;
+        }
+
+        /* Two-Column Showcase */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 36px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 860px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .overview-panel {
+            background: #0B1019;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 34px;
+        }
+
+        .overview-panel h2 {
+            font-size: 1.35rem;
+            color: #FFFFFF;
+            margin: 0 0 16px 0;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .overview-panel p {
+            color: #9DA8B8;
+            font-size: 0.96rem;
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+
+        .game-features-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+        }
+
+        .game-features-checklist li {
+            padding: 8px 0;
+            color: #CBD5E1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.94rem;
+        }
+
+        .game-features-checklist li::before {
+            content: '✓';
+            color: #00D2FF;
+            font-weight: 900;
+        }
+
+        /* Screenshot Thumbnails */
+        .thumbs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .thumbs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .thumbs-grid img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .thumbs-grid img:hover {
+            transform: scale(1.03);
+            border-color: #00D2FF;
+        }
+
+        /* Sidebar Specs Card */
+        .specs-sidebar-card {
+            background: #0B1019;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 26px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            margin: 0 0 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 10px;
+            letter-spacing: 0.04em;
+        }
+
+        .specs-data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+
+        .specs-data-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .specs-data-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .specs-data-table td {
+            padding: 11px 4px;
+        }
+
+        .specs-data-table td:first-child {
+            color: #6C788A;
+            font-weight: 600;
+        }
+
+        .specs-data-table td:last-child {
+            color: #F2F5F8;
+            font-weight: 700;
+            text-align: right;
+        }
+
+        /* Clean Studio Footer */
+        .download-footer {
+            background: #04070B;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 44px 24px;
+            text-align: center;
+        }
+
+        .download-footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+
+        .download-footer-logo img {
+            height: 34px;
+            width: auto;
+        }
+
+        .footer-credit-text {
+            color: #6C788A;
+            font-size: 0.88rem;
+            margin: 0 0 8px 0;
+        }
+
+        .footer-credit-text strong {
+            color: #A0AEC0;
+        }
+
+        .footer-nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            font-size: 0.84rem;
+            margin-top: 10px;
+        }
+
+        .footer-nav-links a {
+            color: #8C9CAE;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .footer-nav-links a:hover {
+            color: #00D2FF;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tactical Top Navigation -->
+    <header class="download-navbar">
+        <a href="index.html" class="nav-logo-link" title="Return to Home">
+            <img src="assets/keyjutsu_horizontal_logo.png" alt="Rishu Key Jutsu Logo" class="nav-logo-img">
+        </a>
+        <div class="nav-actions-group">
+            <a href="index.html" class="btn btn-secondary" style="padding: 8px 18px; font-size: 0.82rem;">← HOME</a>
+            <a href="play.html" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.82rem;">⚔️ PLAY ONLINE</a>
+        </div>
+    </header>
+
+    <main class="download-page-wrap">
+
+        <!-- Hero Header Card -->
+        <div class="download-hero-card">
+            <div class="hero-art-box">
+                <img src="assets/main_menu_bg.png" alt="Rishu Key Jutsu Key Art" class="hero-art-img">
+                <div class="hero-art-overlay"></div>
+                <span class="hero-badge-tag">OFFICIAL DESKTOP RELEASE</span>
+            </div>
+
+            <div class="hero-meta-bar">
+                <div class="hero-title-group">
+                    <h1>RISHU KEY JUTSU — WINDOWS EDITION</h1>
+                    <p>Real-Time Action Martial Arts Touch Typing Game • Created by <strong>Code With Rishabh (Rishabh Yadav)</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Download Box (Clean & Direct) -->
+        <div class="primary-download-card">
+            <span class="status-pill">✦ VERIFIED CLEAN & STANDALONE • WINDOWS 10 / 11 64-BIT</span>
+            <h2 class="download-heading">Download Desktop Edition</h2>
+            <p class="download-lead">
+                Install the official offline PC release. Includes all 100 levels, 11 combat arenas, high-resolution visual effects, and dynamic martial arts audio.
+            </p>
+
+            <a href="downloads/RishuKeyJutsuSetup.exe" download="RishuKeyJutsuSetup.exe" class="btn-download-hero">
+                <span class="btn-download-icon">⬇️</span>
+                <span class="btn-download-text">
+                    <span class="btn-download-main">DOWNLOAD WINDOWS SETUP (.EXE)</span>
+                    <span class="btn-download-sub">Official Setup Installer • 14.7 MB • Single-Click Install</span>
+                </span>
+            </a>
+
+            <div class="sub-options-bar">
+                <span>Looking for portable ZIP instead? <a href="downloads/Rishu-KeyJutsu-Windows-v1.0.0.zip" download="Rishu-KeyJutsu-Windows-v1.0.0.zip">Download Portable ZIP (14.8 MB)</a></span>
+                <span>•</span>
+                <span>Prefer to play in browser? <a href="play.html">Launch Web Edition</a></span>
+            </div>
+
+            <ul class="features-bullet-row">
+                <li><span>✓</span> Standard Windows Setup Wizard (Compiled with Inno Setup)</li>
+                <li><span>✓</span> Automatically creates permanent Desktop & Start Menu shortcuts</li>
+                <li><span>✓</span> 100% Offline Single-Player Gameplay</li>
+                <li><span>✓</span> Zero Ads • Zero Telemetry • Completely Free Forever</li>
+            </ul>
+        </div>
+
+        <!-- 3-Step Simple Installation Guide -->
+        <section class="install-flow-section">
+            <div class="section-subhead">QUICK START GUIDE</div>
+            <div class="steps-three-grid">
+                <div class="step-tile-card">
+                    <div class="step-tile-header">
+                        <span class="step-badge-num">01</span>
+                        <h3 class="step-tile-title">Download Setup</h3>
+                    </div>
+                    <p class="step-tile-desc">
+                        Click the <strong>Download Windows Setup</strong> button above to save the 14.7 MB installer (<code>RishuKeyJutsuSetup.exe</code>) directly via your browser.
+                    </p>
+                </div>
+
+                <div class="step-tile-card">
+                    <div class="step-tile-header">
+                        <span class="step-badge-num">02</span>
+                        <h3 class="step-tile-title">Run Setup Wizard</h3>
+                    </div>
+                    <p class="step-tile-desc">
+                        Open the downloaded file. Follow the fast 1-click Windows Setup Wizard to automatically install the game to your system.
+                    </p>
+                </div>
+
+                <div class="step-tile-card">
+                    <div class="step-tile-header">
+                        <span class="step-badge-num">03</span>
+                        <h3 class="step-tile-title">Launch from Desktop</h3>
+                    </div>
+                    <p class="step-tile-desc">
+                        An official <strong>Rishu Key Jutsu</strong> icon is placed on your desktop. Double-click anytime to launch the dedicated desktop app!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security & Safe Software Guarantee -->
+        <div class="security-card">
+            <div class="security-header">
+                <span style="font-size: 1.4rem;">🛡️</span>
+                <h3>100% Safe, Clean & Verified Software</h3>
+            </div>
+            <p class="security-text">
+                <strong>Rishu Key Jutsu</strong> is safe, free, and open software. It contains <strong>zero malware, zero background telemetry, and zero adware</strong>.
+            </p>
+            <div class="security-smartscreen-notice">
+                <strong>ℹ️ Windows SmartScreen Note for Indie Releases:</strong><br>
+                Microsoft requires a costly corporate EV certificate for newly published independent software. If Windows Defender shows an initial informational notice on first launch: simply click <strong>"More info"</strong> and then click <strong>"Run anyway"</strong>. The game will launch immediately.
+            </div>
+        </div>
+
+        <!-- Two-Column Game Details & Showcase -->
+        <div class="details-grid">
+            <article class="overview-panel">
+                <h2>TYPE. STRIKE. MASTER.</h2>
+                <p>
+                    <strong>Rishu Key Jutsu</strong> transforms touch typing speed and accuracy into real-time martial arts combat. Every accurate keystroke lands a striking punch or kick, while typos leave your shinobi vulnerable to enemy counter-attacks.
+                </p>
+
+                <h2 style="font-size: 1.15rem; margin-top: 28px;">KEY FEATURES</h2>
+                <ul class="game-features-checklist">
+                    <li>100 Progressive levels scaling dynamically from 15 to 148 WPM</li>
+                    <li>11 Distinct combat arenas (from Training Dojo to Final Key Summit)</li>
+                    <li>Stylized anime shinobi martial artists with dynamic ribbon & cloth physics</li>
+                    <li>Chakra Jutsu Unleashed mode for high-damage combos and HP recovery</li>
+                    <li>Official 7-Tier Ninja Rank matrix (from Rank F to S-Rank Grandmaster)</li>
+                    <li>Placement Test mode to automatically unlock your corresponding skill tier</li>
+                    <li>In-depth typing analytics dashboard tracking weak keys and accuracy streaks</li>
+                    <li>100% Offline standalone software with zero external dependencies</li>
+                </ul>
+
+                <h2 style="font-size: 1.15rem; margin-top: 28px;">IN-GAME SCREENSHOTS</h2>
+                <div class="thumbs-grid">
+                    <img src="assets/ui_main_menu.png" alt="Main Menu UI" loading="lazy">
+                    <img src="assets/ui_level_select.png" alt="100 Level Map" loading="lazy">
+                    <img src="assets/ui_typing_dashboard.png" alt="Analytics Dashboard" loading="lazy">
+                    <img src="assets/arena_04_underground.png" alt="Underground Arena" loading="lazy">
+                    <img src="assets/arena_08_jungle.png" alt="Jungle Arena" loading="lazy">
+                    <img src="assets/ui_placement_test.png" alt="Placement Test" loading="lazy">
+                </div>
+            </article>
+
+            <!-- Sidebar Info -->
+            <aside>
+                <div class="specs-sidebar-card">
+                    <h3 class="sidebar-title">GAME SPECIFICATIONS</h3>
+                    <table class="specs-data-table">
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td>Rishu Key Jutsu</td>
+                            </tr>
+                            <tr>
+                                <td>Version</td>
+                                <td>1.0.0 (Official Release)</td>
+                            </tr>
+                            <tr>
+                                <td>Developer</td>
+                                <td>Code With Rishabh (Rishabh Yadav)</td>
+                            </tr>
+                            <tr>
+                                <td>Platform</td>
+                                <td>Windows 10 / 11 (64-bit)</td>
+                            </tr>
+                            <tr>
+                                <td>Setup Size</td>
+                                <td>14.7 MB</td>
+                            </tr>
+                            <tr>
+                                <td>Price</td>
+                                <td style="color: #42E88A;">100% Free</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>Godot 4 / Canvas 2D</td>
+                            </tr>
+                            <tr>
+                                <td>Offline Play</td>
+                                <td>Supported (100% Offline)</td>
+                            </tr>
+                            <tr>
+                                <td>Telemetry / Ads</td>
+                                <td>None (Zero Tracking)</td>
+                            </tr>
+                            <tr>
+                                <td>RAM Required</td>
+                                <td>4 GB Minimum</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
+                        <a href="downloads/RishuKeyJutsuSetup.exe" download="RishuKeyJutsuSetup.exe" class="btn btn-primary" style="width: 100%; text-align: center; padding: 12px 16px; font-size: 0.88rem;">
+                            ⬇️ Download Setup (.EXE)
+                        </a>
+                        <a href="play.html" class="btn btn-secondary" style="width: 100%; text-align: center; padding: 12px 16px; font-size: 0.88rem;">
+                            ⚔️ Play in Browser
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+    </main>
+
+    <!-- Clean Studio Footer -->
+    <footer class="download-footer">
+        <div class="download-footer-logo">
+            <img src="assets/keyjutsu_horizontal_logo.png" alt="Rishu Key Jutsu Logo">
+        </div>
+        <p class="footer-credit-text">
+            © 2026 <strong>Code With Rishabh (Rishabh Yadav)</strong>. 100% Free Martial Arts Touch Typing Game.
+        </p>
+        <div class="footer-nav-links">
+            <a href="index.html">Home</a> •
+            <a href="play.html">Play Online</a> •
+            <a href="https://github.com/rishabhyadav47383" target="_blank" rel="noopener noreferrer">GitHub</a> •
+            <a href="https://www.instagram.com/rishabh__yadav777?stkn=MWpncXM0MWV3OXd1cw==" target="_blank" rel="noopener noreferrer">Instagram</a> •
+            <a href="privacy.html">Privacy</a> •
+            <a href="terms.html">Terms</a>
+        </div>
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(() => {});
+            });
+        }
+    </script>
+</body>
+</html>
