@@ -101,13 +101,14 @@ Open `http://localhost:8080/play.html` in your browser.
 
 ## 👤 Author & Developer
 
-**Code With Rishabh (Rishabh Yadav)**
-- **GitHub**: [@rishu-builds](https://github.com/rishu-builds)
-- **Instagram**: [@rishabh__yadav777](https://www.instagram.com/rishabh__yadav777?stkn=MWpncXM0MWV3OXd1cw==)
-- **Email**: [ysrishabh017@gmail.com](mailto:ysrishabh017@gmail.com)
+**Rishabh Yadav**
+- 💼 **LinkedIn**: [Rishabh Yadav](https://www.linkedin.com/in/rishabh-yadav777/)
+- 💻 **GitHub**: [@rishu-builds](https://github.com/rishu-builds)
+- ✉️ **Email**: [ysrishabh017@gmail.com](mailto:ysrishabh017@gmail.com)
+- 🎓 **Education**: BCA Student @ Dr. Ram Manohar Lohia Avadh University (Batch 2024–2027)
 
 ---
 
 ## 📄 License
 
-This project is freely distributed for personal use and learning. Developed with ❤️ by **Rishabh Yadav**.
+This project is open-source and freely distributed under the [MIT License](LICENSE). Developed with precision by **Rishabh Yadav**.

@@ -1,0 +1,24 @@
+{
+  "name": "rishu-key-jutsu",
+  "version": "1.0.0",
+  "description": "Real-time martial arts touch typing combat game rendered with 60 FPS HTML5 Canvas engine and Web Audio API",
+  "main": "game.js",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "dev": "npx serve -l 3000 ."
+  },
+  "keywords": [
+    "touch-typing",
+    "html5-canvas",
+    "game-development",
+    "web-audio-api",
+    "javascript-game",
+    "arcade"
+  ],
+  "author": {
+    "name": "Rishabh Yadav",
+    "email": "ysrishabh017@gmail.com",
+    "url": "https://github.com/rishu-builds"
+  },
+  "license": "MIT"
+}
