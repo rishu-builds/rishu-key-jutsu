@@ -35,7 +35,7 @@ namespace RishuKeyJutsu
                         string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                         string[] searchCandidates = new string[]
                         {
-                            Path.Combine(userProfile, @".gemini\antigravity\scratch\keyjutsu-web\play.html"),
+                            Path.Combine(userProfile, @"Desktop\Rishu-KeyJutsu\play.html"),
                             Path.Combine(userProfile, @"Downloads\Rishu-KeyJutsu-Windows-v1.0.0\play.html"),
                             Path.Combine(userProfile, @"Desktop\Rishu-KeyJutsu-Windows-v1.0.0\play.html"),
                             Path.Combine(userProfile, @"Downloads\keyjutsu-web\play.html")
