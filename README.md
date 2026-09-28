@@ -5,7 +5,7 @@
 <h1 align="center">Rishu Key Jutsu — Martial Arts Touch Typing Combat</h1>
 
 <p align="center">
-  <strong>Execute real-time martial arts strikes through touch typing precision across 100 levels and 11 cyber-dojo arenas.</strong>
+  <strong>Execute real-time martial arts strikes through touch typing precision across 100 levels and 11 unique arenas.</strong>
 </p>
 
 <p align="center">
@@ -29,13 +29,13 @@ Every accurate letter triggers swift punches, crescent kicks, and multi-hit comb
 
 - **🥋 Stylized Shinobi Martial Artists**: Fully articulated 60 FPS combatants rendered on HTML5 Canvas with procedural physics for flowing twin headband ribbons and battle gear.
 - **🗺️ 100 Progressive Difficulty Levels**: Speed targets scale from 15 WPM in early Dojo training up to 148 WPM at the Level 100 Grandmaster Summit.
-- **🏯 11 Cyber & Dojo Arenas**: Training Dojo, Keyboard Circuit, Neon Rooftop, Underground Facility, Emerald Meadow, Coastal Fortress, Bamboo Jungle, Frozen Pass, Celestial Realm, and Final Key Summit.
+- **🏯 11 Battle & Dojo Arenas**: Training Dojo, Keyboard Circuit, Neon Rooftop, Underground Facility, Emerald Meadow, Coastal Fortress, Bamboo Jungle, Frozen Pass, Celestial Realm, and Final Key Summit.
 - **👹 Multi-Phase Boss Battles**: Imposing Samurai Kabuto bosses with berserk transformations, glowing crimson auras, and special attack intervals.
 - **⚡ Chakra Jutsu Unleashed**: Chain 15+ accurate keystrokes to activate Chakra Rage, dealing massive damage and restoring player HP.
 - **📊 7-Tier Ninja Rank Evaluation**: Dynamic rank evaluation based on the official formula: `40% WPM + 40% Accuracy + 20% Consistency` (Ranks: F, E, D, C, B, A, S).
 - **📈 Typing Analytics Dashboard**: Track key-by-key accuracy streaks, practice time, weak key error patterns, and high scores.
 - **📦 1-Click Windows Desktop Setup**: Bundled into a native 14.7 MB Windows installer (compiled with Inno Setup) with automatic desktop icon and start menu integration.
-- **🔒 100% Offline & Private**: Zero external dependencies, zero ads, zero telemetry, and zero microtransactions.
+- **🔒 100% Offline & Private**: Zero external tracking, zero ads, and no microtransactions.
 
 ---
 
@@ -55,7 +55,7 @@ Every accurate letter triggers swift punches, crescent kicks, and multi-hit comb
 | **Rendering Engine** | HTML5 Canvas 2D (`requestAnimationFrame`) | 60 FPS procedural character animation, hitboxes, and particle FX |
 | **Game Logic** | JavaScript (ES6+ Vanilla) | State management, combat delta-timing, typo penalties, boss AI |
 | **Audio Engine** | Web Audio API / HTML5 Audio | Low-latency martial arts punch, kick, and special jutsu sound effects |
-| **Styling & HUD** | CSS3 (Custom Variables, Glassmorphism) | Dark cyberpunk tactical aesthetic, responsive arcade layouts |
+| **Styling & HUD** | CSS3 (Custom Variables, Modern UI) | Dark arcade aesthetic, responsive layouts |
 | **Desktop Launcher** | C# (.NET Framework) | Win32 COM `IShellLinkW` desktop shortcut integration and borderless app execution |
 | **Installer** | Inno Setup 6 (LZMA2 Ultra Compression) | 1-Click native Windows desktop packaging |
 | **Deployment** | Vercel | Global CDN delivery and production CI/CD |
@@ -111,4 +111,4 @@ Open `http://localhost:8080/play.html` in your browser.
 
 ## 📄 License
 
-This project is open-source and freely distributed under the [MIT License](LICENSE). Developed with precision by **Rishabh Yadav**.
+This project is open-source and freely distributed under the [MIT License](LICENSE). Built by **Rishabh Yadav**.

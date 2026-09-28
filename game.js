@@ -1,13 +1,8 @@
-/* ==============================================================================
-   RISHU KEY JUTSU — COMPLETE ACTION MARTIAL ARTS TYPING COMBAT ENGINE
-   Created by Rishabh (Rishu) • 60 FPS Canvas Combat • Web Audio Synthesizer
-   Supports all 6 Playable Screens:
-     1. Main Menu (Arcade)
-     2. Choose Your Path (10 Level Select Cards)
-     3. Progress & Stats Dashboard (Heatmap & Analytics)
-     4. Typing Speed Test (Interactive Realtime Keyboard)
-     5 & 6. Combat Arenas (Floating words over enemy, Trailer hit sounds)
-   ============================================================================== */
+/**
+ * Rishu Key Jutsu - Martial Arts Typing Combat
+ * HTML5 Canvas 2D engine with procedural animations and Web Audio sound effects.
+ * Author: Rishabh Yadav (rishu-builds)
+ */
 
 (function () {
     'use strict';
