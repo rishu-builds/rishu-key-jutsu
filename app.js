@@ -1,6 +1,4 @@
-/* ==============================================================================
-   KEYJUTSU GAME WEBSITE — INTERACTIVE SCRIPT
-   ============================================================================== */
+// KeyJutsu website interactive controls
 
 document.addEventListener("DOMContentLoaded", function () {
     // 1. Mobile Navigation Drawer & Body Lock

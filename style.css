@@ -1,7 +1,4 @@
-/* ==============================================================================
-   KEYJUTSU OFFICIAL GAME WEBSITE — EXACT GAME VISUAL IDENTITY MATCHING PASS
-   Authentic Red + Cyan Balance • Dark Tactical Navy • Godot 4 HUD Aesthetics
-   ============================================================================== */
+/* Rishu Key Jutsu - Main Website Stylesheet */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -374,7 +371,7 @@ a:hover {
     gap: 6px;
 }
 
-/* Hero Showcase Frame (Godot 4 HUD Arcade Frame) */
+/* Hero Showcase Frame */
 .hero-frame-card {
     background: var(--color-surface-deep);
     border: 1px solid var(--color-border-crimson);
@@ -1250,9 +1247,7 @@ img, video, canvas, svg {
     }
 }
 
-/* ==============================================================================
-   LIVE LAUNCH COUNTDOWN & AUTOMATIC CTA SWITCHER STYLES
-   ============================================================================== */
+/* Launch Countdown & CTA Switcher */
 .countdown-container {
     display: flex;
     align-items: center;

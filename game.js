@@ -7,9 +7,7 @@
 (function () {
     'use strict';
 
-    // --------------------------------------------------------------------------
-    // 1. SOUND SYNTHESIZER (WEB AUDIO API + REAL HIT SOUNDS)
-    // --------------------------------------------------------------------------
+    // Audio engine & sound synthesizer
     class SoundEngine {
         constructor() {
             this.ctx = null;
@@ -431,9 +429,7 @@
 
     const sound = new SoundEngine();
 
-    // --------------------------------------------------------------------------
-    // 2. ARENAS & CURRICULUM CONFIGURATION (100 LEVELS, 11 ARENAS)
-    // --------------------------------------------------------------------------
+    // Arena curriculum & level configurations
     const ARENAS = [
         { id: 1, name: "Training Dojo", minLvl: 1, maxLvl: 10, bg: "assets/arena_01_training.png", wpmRange: "15–24 WPM", color: "#42E88A" },
         { id: 2, name: "Keyboard Circuit", minLvl: 11, maxLvl: 20, bg: "assets/arena_02_keyboard.png", wpmRange: "25–34 WPM", color: "#00D2FF" },
@@ -2060,9 +2056,7 @@
         return selectedWord;
     }
 
-    // --------------------------------------------------------------------------
-    // 2.5 BELTS, BOSSES & JUTSU CONSTANTS
-    // --------------------------------------------------------------------------
+    // Belts, boss profiles, and combat rankings
     function getBeltInfo(unlockedLevel) {
         if (unlockedLevel >= 100) {
             return {
@@ -2149,9 +2143,7 @@
         "LIGHTNING BLADE", "VORTEX ASSAULT"
     ];
 
-    // --------------------------------------------------------------------------
-    // 3. STICKMAN FIGHTERS RENDERING WITH BELTS, AURAS & BOSS MODELS
-    // --------------------------------------------------------------------------
+    // Fighter canvas drawing & animation system
     function drawCapsule(ctx, x1, y1, x2, y2, r, fillStyle, strokeStyle, lineWidth = 0) {
         const dx = x2 - x1;
         const dy = y2 - y1;
@@ -2706,9 +2698,7 @@
         }
     }
 
-        // --------------------------------------------------------------------------
-    // 4. PARTICLE, SHOCKWAVE & HIT FX SYSTEM
-    // --------------------------------------------------------------------------
+    // Particle, shockwave, and hit effects
     class FXSystem {
         constructor() {
             this.particles = [];
@@ -2830,9 +2820,7 @@
         }
     }
 
-    // --------------------------------------------------------------------------
-    // 5. MASTER GAME CONTROLLER
-    // --------------------------------------------------------------------------
+    // Main game controller
     class RishuKeyJutsuGame {
         constructor() {
             this.canvas = document.getElementById('gameCanvas');

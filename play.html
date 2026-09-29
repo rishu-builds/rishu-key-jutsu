@@ -13,9 +13,7 @@
 </head>
 <body class="game-body">
 
-    <!-- ===================================================================
-         SCREEN 1: MAIN MENU (ui_main_menu.png)
-         =================================================================== -->
+    <!-- Main Menu Screen -->
     <div id="screen-main-menu" class="game-screen active">
         <div class="main-menu-stage-wrapper">
             <div class="main-menu-stage">
@@ -25,7 +23,7 @@
                     <button class="menu-action-pill gold" id="menu-btn-cert" title="Get Official Ninja Certificate">📜 CERTIFICATE</button>
                 </div>
 
-                <!-- Exact interactive overlays on top of the original artwork buttons -->
+                <!-- Interactive buttons -->
                 <button class="menu-hitbox-btn btn-play" id="menu-btn-play" aria-label="Play Game" title="Play Game"></button>
                 <button class="menu-hitbox-btn btn-levels" id="menu-btn-levels" aria-label="Level Select" title="Level Select"></button>
                 <button class="menu-hitbox-btn btn-test" id="menu-btn-test" aria-label="Typing Speed Test" title="Typing Speed Test"></button>
@@ -37,15 +35,13 @@
 
                 <div class="menu-credits-bar">
                     <span>RISHU KEY JUTSU v1.0.0 • CREATED BY CODE WITH RISHABH (RISHABH YADAV)</span>
-                    <span>KEYJUTSU COMBAT ENGINE — GODOT 4 / CANVAS 2D</span>
+                    <span>HTML5 CANVAS 2D COMBAT ENGINE</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ===================================================================
-         SCREEN 2: CHOOSE YOUR PATH - LEVEL SELECT (ui_level_select.png)
-         =================================================================== -->
+    <!-- Level Select Screen -->
     <div id="screen-level-select" class="game-screen" style="display: none;">
         <div class="screen-container level-select-container">
             <!-- Header -->
@@ -83,9 +79,7 @@
         </div>
     </div>
 
-    <!-- ===================================================================
-         SCREEN 3: PROGRESS & STATS DASHBOARD & HEATMAP (ui_typing_dashboard.png)
-         =================================================================== -->
+    <!-- Progress & Stats Screen -->
     <div id="screen-stats-dashboard" class="game-screen" style="display: none;">
         <div class="dashboard-outer-frame">
             <!-- Header -->
@@ -183,9 +177,7 @@
         </div>
     </div>
 
-    <!-- ===================================================================
-         SCREEN 4: TYPING TEST / PLACEMENT MODE (ui_placement_test.png)
-         =================================================================== -->
+    <!-- Typing Speed Test Screen -->
     <div id="screen-typing-test" class="game-screen" style="display: none;">
         <div class="screen-container typing-test-container">
             <!-- Header -->
@@ -304,9 +296,7 @@
         </div>
     </div>
 
-    <!-- ===================================================================
-         SCREEN 5 & 6: COMBAT VIEWPORT (arena_04_underground / arena_08_jungle)
-         =================================================================== -->
+    <!-- Combat Viewport Screen -->
     <div id="screen-combat" class="game-screen" style="display: none;">
         <!-- Top Tactical HUD -->
         <header class="game-hud-bar">
@@ -418,9 +408,7 @@
         </main>
     </div>
 
-    <!-- ===================================================================
-         DIALOG MODALS (Settings, How To Play, Victory, Defeat, Pause, Test Result)
-         =================================================================== -->
+    <!-- Dialog Modals -->
 
     <!-- SETTINGS MODAL -->
     <div class="game-modal-overlay" id="settings-modal" style="display: none;">
